@@ -328,95 +328,227 @@
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section id="solution" class="py-20 lg:py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <span class="text-brand-green font-semibold text-sm uppercase tracking-wider">La solution</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-4">
-                    La technologie qui fait le travail à votre place
-                </h2>
-            </div>
+    <!-- Solution Section (refonte design) -->
+<section id="solution" class="relative py-20 lg:py-32 bg-slate-50 overflow-hidden">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/40"></div>
+  </div>
 
-            <!-- Color Explanation -->
-            <div class="grid lg:grid-cols-3 gap-6 mb-16">
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-green hover:scale-105 transition duration-300">
-                    <div class="w-20 h-20 rounded-full bg-brand-green mx-auto mb-6 animate-glow-green flex items-center justify-center">
-                        <i data-lucide="check" class="w-10 h-10 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-center mb-2 text-brand-green">VERT</h3>
-                    <p class="text-slate-600 text-center mb-4">Consommation optimale</p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-green"></i> Moins de 60L / douche</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-green"></i> 5-6 min idéales</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-green"></i> Économie maximale</li>
-                    </ul>
-                </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:scale-105 transition duration-300">
-                    <div class="w-20 h-20 rounded-full bg-brand-orange mx-auto mb-6 animate-glow-orange flex items-center justify-center">
-                        <i data-lucide="clock" class="w-10 h-10 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-center mb-2 text-brand-orange">ORANGE</h3>
-                    <p class="text-slate-600 text-center mb-4">Attention, bientôt la fin</p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-orange"></i> 60-80L consommés</li>
-                        <li class="flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-orange"></i> 7-8 min écoulées</li>
-                        <li class="flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-orange"></i> Pensez à rincer</li>
-                    </ul>
-                </div>
+    <!-- Title -->
+    <div class="max-w-3xl mx-auto text-center mb-14 lg:mb-16">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-green/20 text-brand-green text-sm font-semibold shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+        La solution
+      </span>
+      <h2 class="text-3xl lg:text-5xl font-extrabold text-slate-900 mt-5 mb-4 leading-tight">
+        La technologie qui vous guide<br class="hidden sm:block" />
+        <span class="text-brand-green">pendant la douche</span>
+      </h2>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Un code couleur ultra simple : vous voyez immédiatement si vous êtes dans la zone optimale… ou si ça commence à gaspiller.
+      </p>
+    </div>
 
-                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-red hover:scale-105 transition duration-300">
-                    <div class="w-20 h-20 rounded-full bg-brand-red mx-auto mb-6 animate-glow-red flex items-center justify-center">
-                        <i data-lucide="alert-octagon" class="w-10 h-10 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-center mb-2 text-brand-red">ROUGE</h3>
-                    <p class="text-slate-600 text-center mb-4">Consommation excessive</p>
-                    <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-brand-red"></i> Plus de 80L / douche</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-brand-red"></i> +8 minutes</li>
-                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-brand-red"></i> Gaspi important</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Color system cards -->
+    <div class="grid lg:grid-cols-3 gap-6 mb-14 lg:mb-16">
 
-            <!-- Features Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-brand-blue-light rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="zap" class="w-6 h-6 text-brand-blue"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Sans batterie</h4>
-                    <p class="text-sm text-slate-600">Fonctionne uniquement par la pression hydraulique. Zéro maintenance.</p>
-                </div>
+      <!-- GREEN -->
+      <div class="group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition">
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-green/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
 
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-brand-green-light rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="wrench" class="w-6 h-6 text-brand-green"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Installation 2 min</h4>
-                    <p class="text-sm text-slate-600">Vissage universel standard. Aucun outil nécessaire.</p>
-                </div>
+        <div class="relative flex items-start justify-between mb-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Mode</p>
+            <h3 class="text-2xl font-extrabold text-brand-green mt-1">VERT</h3>
+            <p class="text-slate-600 mt-1">Consommation optimale</p>
+          </div>
 
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="shield-check" class="w-6 h-6 text-purple-600"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Compatible 95%</h4>
-                    <p class="text-sm text-slate-600">Fonctionne avec toutes les installations standards en France.</p>
-                </div>
-
-                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-brand-orange-light rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="thermometer" class="w-6 h-6 text-brand-orange"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Température stable</h4>
-                    <p class="text-sm text-slate-600">Régulation interne qui maintient la température constante.</p>
-                </div>
-            </div>
+          <div class="w-14 h-14 rounded-2xl bg-brand-green/10 flex items-center justify-center border border-brand-green/20">
+            <i data-lucide="check" class="w-7 h-7 text-brand-green"></i>
+          </div>
         </div>
-    </section>
 
+        <div class="relative rounded-2xl p-5 border border-slate-200 bg-slate-50 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-semibold text-slate-700">Zone éco</span>
+            <span class="text-xs font-bold text-brand-green">OK</span>
+          </div>
+          <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+            <div class="h-2 w-4/5 bg-brand-green/70"></div>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">Objectif : rester dans le vert le plus longtemps possible.</p>
+        </div>
+
+        <ul class="relative space-y-3 text-sm text-slate-600">
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-green"></span>
+            Moins de 60L / douche
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-green"></span>
+            5–6 min idéales
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-green"></span>
+            Économie maximale
+          </li>
+        </ul>
+      </div>
+
+      <!-- ORANGE -->
+      <div class="group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition">
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+
+        <div class="relative flex items-start justify-between mb-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Mode</p>
+            <h3 class="text-2xl font-extrabold text-brand-orange mt-1">ORANGE</h3>
+            <p class="text-slate-600 mt-1">Attention, bientôt la fin</p>
+          </div>
+
+          <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 flex items-center justify-center border border-brand-orange/20">
+            <i data-lucide="clock" class="w-7 h-7 text-brand-orange"></i>
+          </div>
+        </div>
+
+        <div class="relative rounded-2xl p-5 border border-slate-200 bg-slate-50 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-semibold text-slate-700">Zone alerte</span>
+            <span class="text-xs font-bold text-brand-orange">⚠</span>
+          </div>
+          <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+            <div class="h-2 w-3/5 bg-brand-orange/70"></div>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">C’est le bon moment pour rincer et couper.</p>
+        </div>
+
+        <ul class="relative space-y-3 text-sm text-slate-600">
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+            60–80L consommés
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+            7–8 min écoulées
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+            Pensez à rincer
+          </li>
+        </ul>
+      </div>
+
+      <!-- RED -->
+      <div class="group relative bg-white rounded-3xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition">
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-red/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+
+        <div class="relative flex items-start justify-between mb-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest text-slate-500 uppercase">Mode</p>
+            <h3 class="text-2xl font-extrabold text-brand-red mt-1">ROUGE</h3>
+            <p class="text-slate-600 mt-1">Consommation excessive</p>
+          </div>
+
+          <div class="w-14 h-14 rounded-2xl bg-brand-red/10 flex items-center justify-center border border-brand-red/20">
+            <i data-lucide="alert-octagon" class="w-7 h-7 text-brand-red"></i>
+          </div>
+        </div>
+
+        <div class="relative rounded-2xl p-5 border border-slate-200 bg-slate-50 mb-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-semibold text-slate-700">Zone stop</span>
+            <span class="text-xs font-bold text-brand-red">STOP</span>
+          </div>
+          <div class="h-2 rounded-full bg-slate-200 overflow-hidden">
+            <div class="h-2 w-2/5 bg-brand-red/70"></div>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">Vous êtes au-delà de la zone “économie”.</p>
+        </div>
+
+        <ul class="relative space-y-3 text-sm text-slate-600">
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            Plus de 80L / douche
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            +8 minutes
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+            Gaspi important
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Features strip -->
+    <div class="bg-white/70 backdrop-blur rounded-3xl border border-slate-200 shadow-xl p-6 lg:p-8">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-6">
+        <div>
+          <h3 class="text-2xl font-extrabold text-slate-900">Pourquoi Dimileau est différent</h3>
+          <p class="text-slate-600 mt-1">Simple, fiable, et pensé pour durer. Zéro appli, zéro friction.</p>
+        </div>
+        <a href="#contact"
+           class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white font-bold rounded-full hover:bg-slate-800 transition">
+          Je veux ma démo
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-brand-blue-light flex items-center justify-center">
+              <i data-lucide="zap" class="w-5 h-5 text-brand-blue"></i>
+            </div>
+            <p class="font-bold text-slate-900">Sans batterie</p>
+          </div>
+          <p class="text-sm text-slate-600">Fonctionne par pression hydraulique. Zéro maintenance.</p>
+        </div>
+
+        <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-brand-green-light flex items-center justify-center">
+              <i data-lucide="wrench" class="w-5 h-5 text-brand-green"></i>
+            </div>
+            <p class="font-bold text-slate-900">Installation 2 min</p>
+          </div>
+          <p class="text-sm text-slate-600">Vissage universel. Aucun outil nécessaire.</p>
+        </div>
+
+        <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-5 h-5 text-purple-600"></i>
+            </div>
+            <p class="font-bold text-slate-900">Compatible 95%</p>
+          </div>
+          <p class="text-sm text-slate-600">Fonctionne avec la majorité des installations standards.</p>
+        </div>
+
+        <div class="group rounded-2xl border border-slate-200 bg-white p-5 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-11 h-11 rounded-xl bg-brand-orange-light flex items-center justify-center">
+              <i data-lucide="thermometer" class="w-5 h-5 text-brand-orange"></i>
+            </div>
+            <p class="font-bold text-slate-900">Température stable</p>
+          </div>
+          <p class="text-sm text-slate-600">Régulation interne pour un confort constant.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
     <!-- Social Proof -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
