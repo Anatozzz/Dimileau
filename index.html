@@ -117,18 +117,18 @@
 </head>
 <body class="font-sans text-slate-800 bg-white antialiased">
 
-    <!-- Header -->
+   <!-- Header -->
 <header class="fixed w-full top-0 z-40 glass-effect border-b border-slate-200/50 transition-all duration-300" id="header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-      
+
       <!-- Logo -->
-      <div class="flex items-center gap-2">
+      <a href="#top" class="flex items-center gap-2">
         <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center">
           <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
         </div>
         <span class="font-bold text-xl text-slate-900">Dimileau</span>
-      </div>
+      </a>
 
       <!-- Navigation -->
       <nav class="hidden md:flex items-center gap-8">
@@ -139,24 +139,25 @@
       </nav>
 
       <!-- Right actions -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
 
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/dimil_eau/" 
-           target="_blank" 
+        <!-- Instagram (visible desktop + mobile) -->
+        <a href="https://www.instagram.com/dimil_eau/"
+           target="_blank"
            rel="noopener"
-           class="hidden md:inline-flex text-slate-600 hover:text-brand-green transition"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green transition"
            aria-label="Instagram Dimileau">
-          <i data-lucide="instagram" class="w-6 h-6"></i>
+          <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
 
-        <!-- CTA -->
-        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+        <!-- CTA (desktop) -->
+        <a href="#contact"
+           class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
           Démonstration gratuite
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
 
-        <!-- Mobile menu button -->
+        <!-- Mobile menu -->
         <button class="md:hidden p-2" id="mobileMenuBtn" aria-label="Ouvrir le menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
