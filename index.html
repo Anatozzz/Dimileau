@@ -1419,82 +1419,247 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-brand-green flex items-center justify-center">
-                            <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <span class="font-bold text-xl">Dimileau</span>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-4">
-                        Le pommeau de douche intelligent qui allie écologie et économies. 
-                        Changez vos habitudes, pas votre confort.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
-                            <i data-lucide="instagram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
-                            <i data-lucide="music" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
-                            <i data-lucide="facebook" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
+<footer class="relative bg-slate-950 text-white overflow-hidden">
+  <!-- Ambient gradients -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-blue/20 blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-[28rem] h-[28rem] rounded-full bg-brand-green/20 blur-3xl"></div>
+  </div>
 
-                <div>
-                    <h4 class="font-bold mb-4">Liens rapides</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#probleme" class="hover:text-white transition">Le Problème</a></li>
-                        <li><a href="#solution" class="hover:text-white transition">Notre Solution</a></li>
-                        <li><a href="#calcul" class="hover:text-white transition">Simulateur</a></li>
-                        <li><a href="#blog" class="hover:text-white transition">Blog</a></li>
-                        <li><a href="#contact" class="hover:text-white transition">Demander une démo</a></li>
-                    </ul>
-                </div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
 
-                <div>
-                    <h4 class="font-bold mb-4">Légal</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition">Mentions légales</a></li>
-                        <li><a href="#" class="hover:text-white transition">Politique de confidentialité</a></li>
-                        <li><a href="#" class="hover:text-white transition">CGV</a></li>
-                        <li><a href="#" class="hover:text-white transition">Cookies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold mb-4">Conseils écologiques</h4>
-                    <p class="text-sm text-slate-400 mb-4">
-                        Suivez-nous pour recevoir chaque semaine des astuces pour réduire votre empreinte carbone.
-                    </p>
-                    <div class="flex gap-2">
-                        <input type="email" placeholder="Votre email" class="flex-1 px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-sm focus:border-brand-green outline-none">
-                        <button class="px-4 py-2 bg-brand-green rounded-lg hover:bg-green-600 transition">
-                            <i data-lucide="send" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-slate-500">
-                    © 2026 Dimileau. Tous droits réservés.
-                </p>
-                <p class="text-sm text-slate-500 flex items-center gap-2">
-                    <i data-lucide="heart" class="w-4 h-4 text-brand-green"></i>
-                    Fait avec amour pour la planète
-                </p>
-            </div>
+    <!-- Impact + CTA bar -->
+    <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 lg:p-8 shadow-2xl shadow-black/30">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div>
+          <p class="text-sm font-semibold text-brand-green/90 uppercase tracking-wider">Impact Dimileau</p>
+          <h3 class="text-2xl lg:text-3xl font-extrabold text-white mt-1">
+            Économiser l’eau, sans y penser.
+          </h3>
+          <p class="text-slate-300 mt-2 max-w-2xl">
+            Notre promesse : du confort, moins de gaspillage, et une facture qui baisse.
+          </p>
         </div>
-    </footer>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#contact"
+             class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-brand-green text-white font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+            Recevoir mon diagnostic gratuit
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#calcul"
+             class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 border border-white/10 text-white font-semibold hover:bg-white/15 transition">
+            Simuler mes économies
+            <i data-lucide="calculator" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Live counters -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-sm text-slate-300">Litres économisés (live)</p>
+            <i data-lucide="droplets" class="w-5 h-5 text-brand-blue"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white">
+            <span id="liveLiters">72 000 000</span> L
+          </div>
+          <p class="text-xs text-slate-400 mt-1">Compteur indicatif basé sur notre moyenne d’équipement.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-sm text-slate-300">Économie cumulée (est.)</p>
+            <i data-lucide="banknote" class="w-5 h-5 text-brand-green"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white">
+            <span id="liveEuros">8 900 000</span> €
+          </div>
+          <p class="text-xs text-slate-400 mt-1">Eau + chauffage (ordre de grandeur).</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+          <div class="flex items-center justify-between mb-2">
+            <p class="text-sm text-slate-300">CO₂ évité (est.)</p>
+            <i data-lucide="leaf" class="w-5 h-5 text-emerald-300"></i>
+          </div>
+          <div class="text-2xl font-extrabold text-white">
+            <span id="liveCo2">1 150</span> t
+          </div>
+          <p class="text-xs text-slate-400 mt-1">Réduction liée à l’eau chaude consommée.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main footer grid -->
+    <div class="mt-12 grid lg:grid-cols-12 gap-10">
+
+      <!-- Brand + social -->
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center">
+            <i data-lucide="droplets" class="w-6 h-6 text-brand-green"></i>
+          </div>
+          <div>
+            <p class="text-lg font-extrabold">Dimileau</p>
+            <p class="text-xs text-slate-400">Écologique • Économique • Simple</p>
+          </div>
+        </div>
+
+        <p class="text-slate-300 text-sm leading-relaxed max-w-md">
+          Un pommeau intelligent qui vous guide par code couleur.
+          Vous réduisez votre consommation, sans sacrifier le confort.
+        </p>
+
+        <div class="mt-5 flex items-center gap-3">
+          <!-- Instagram (icône custom si tu veux remplacer par ton image, dis-moi) -->
+          <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+             class="w-11 h-11 rounded-full bg-white/10 border border-white/10 flex items-center justify-center hover:bg-white/15 transition"
+             aria-label="Instagram Dimileau">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+
+          <a href="#contact"
+             class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 border border-white/10 text-sm font-semibold hover:bg-white/15 transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            Contact
+          </a>
+        </div>
+
+        <!-- Mini pledge -->
+        <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 p-4">
+          <p class="text-sm font-semibold text-white flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-brand-green"></i>
+            Données respectées
+          </p>
+          <p class="text-xs text-slate-400 mt-1">
+            Pas de spam. Conforme RGPD. Désinscription à tout moment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="lg:col-span-3">
+        <p class="font-bold mb-4">Explorer</p>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li><a href="#probleme" class="hover:text-white transition">Le problème</a></li>
+          <li><a href="#solution" class="hover:text-white transition">La solution</a></li>
+          <li><a href="#calcul" class="hover:text-white transition">Simulateur</a></li>
+          <li><a href="#blog" class="hover:text-white transition">Conseils & blog</a></li>
+          <li><a href="#contact" class="hover:text-white transition">Diagnostic gratuit</a></li>
+        </ul>
+      </div>
+
+      <!-- Commitments -->
+      <div class="lg:col-span-5">
+        <p class="font-bold mb-4">Nos engagements</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="trending-down" class="w-5 h-5 text-brand-green"></i>
+              <p class="font-semibold">Moins de consommation</p>
+            </div>
+            <p class="text-sm text-slate-300">
+              Objectif : réduire votre eau + énergie, dès le premier mois.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="sparkles" class="w-5 h-5 text-brand-blue"></i>
+              <p class="font-semibold">Simple & immédiat</p>
+            </div>
+            <p class="text-sm text-slate-300">
+              Installation rapide, guidage visuel : vert → orange → rouge.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="leaf" class="w-5 h-5 text-emerald-300"></i>
+              <p class="font-semibold">Impact planète</p>
+            </div>
+            <p class="text-sm text-slate-300">
+              Moins d’eau chaude consommée = moins d’émissions associées.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="heart-handshake" class="w-5 h-5 text-pink-300"></i>
+              <p class="font-semibold">Humain & transparent</p>
+            </div>
+            <p class="text-sm text-slate-300">
+              Un diagnostic clair, sans jargon, et des conseils actionnables.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-400">
+        © 2026 Dimileau. Tous droits réservés.
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400">
+        <a href="#" class="hover:text-white transition">Mentions légales</a>
+        <span class="opacity-40">•</span>
+        <a href="#" class="hover:text-white transition">Confidentialité</a>
+        <span class="opacity-40">•</span>
+        <a href="#" class="hover:text-white transition">CGV</a>
+        <span class="opacity-40">•</span>
+        <a href="#" class="hover:text-white transition">Cookies</a>
+      </div>
+
+      <p class="text-xs text-slate-400 flex items-center gap-2">
+        <i data-lucide="heart" class="w-4 h-4 text-brand-green"></i>
+        Conçu pour économiser l’eau.
+      </p>
+    </div>
+  </div>
+
+  <!-- Live counter script -->
+  <script>
+    (function () {
+      const litersEl = document.getElementById("liveLiters");
+      const eurosEl  = document.getElementById("liveEuros");
+      const co2El    = document.getElementById("liveCo2");
+      if (!litersEl || !eurosEl || !co2El) return;
+
+      // Valeurs de départ (tu peux les ajuster)
+      let liters = 72000000;
+      let euros  = 8900000;
+      let co2    = 1150;
+
+      // Incréments (effet "live" : raisonnables)
+      const L_PER_SEC   = 1.8;   // +1.8 L / sec
+      const EUR_PER_SEC = 0.25;  // +0.25€ / sec
+      const CO2_PER_MIN = 0.02;  // +0.02 t / min
+
+      const fmt = (n) => new Intl.NumberFormat("fr-FR").format(Math.round(n));
+
+      function tick() {
+        liters += L_PER_SEC;
+        euros  += EUR_PER_SEC;
+
+        litersEl.textContent = fmt(liters);
+        eurosEl.textContent  = fmt(euros);
+      }
+
+      // CO2 moins fréquent (évite trop de jitter)
+      setInterval(() => {
+        co2 += CO2_PER_MIN;
+        co2El.textContent = fmt(co2);
+      }, 60000);
+
+      setInterval(tick, 1000);
+    })();
+  </script>
+</footer>
 
     <script>
         // Initialize Lucide icons
