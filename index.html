@@ -602,7 +602,68 @@
             </div>
         </div>
     </section>
+<script>
+  (function () {
+    const householdSizeEl = document.getElementById("householdSize");
+    const showersPerWeekEl = document.getElementById("showersPerWeek");
+    const showerDurationEl = document.getElementById("showerDuration");
 
+    const currentConsumptionEl = document.getElementById("currentConsumption");
+    const ecoConsumptionEl = document.getElementById("ecoConsumption");
+    const moneySavedEl = document.getElementById("moneySaved");
+
+    if (!householdSizeEl || !showersPerWeekEl || !showerDurationEl ||
+        !currentConsumptionEl || !ecoConsumptionEl || !moneySavedEl) {
+      return;
+    }
+
+    // Hypothèses simples (approx)
+    const FLOW_L_PER_MIN = 12;       // débit douche moyen
+    const REDUCTION = 0.30;          // -30%
+    const WATER_EUR_PER_M3 = 4.2;    // eau+assainissement (moyenne approx)
+    const HOT_WATER_SHARE = 0.70;    // part eau chaude
+    const KWH_PER_LITER_HOT = 0.029; // chauffage ~25°C
+    const ENERGY_EUR_PER_KWH = 0.22; // prix énergie approx
+
+    const fmtInt = (n) => new Intl.NumberFormat("fr-FR").format(Math.round(n));
+    const fmtEuro = (n) => new Intl.NumberFormat("fr-FR", {
+      style: "currency", currency: "EUR", maximumFractionDigits: 0
+    }).format(n);
+
+    function calc() {
+      const householdSize = parseInt(householdSizeEl.value, 10);
+      const showersPerWeek = parseInt(showersPerWeekEl.value, 10);
+      const durationMin = parseInt(showerDurationEl.value, 10);
+
+      const showersYear = householdSize * showersPerWeek * 52;
+
+      const litersCurrent = showersYear * durationMin * FLOW_L_PER_MIN;
+      const litersEco = litersCurrent * (1 - REDUCTION);
+
+      const litersSaved = litersCurrent - litersEco;
+
+      const m3Saved = litersSaved / 1000;
+      const eurWaterSaved = m3Saved * WATER_EUR_PER_M3;
+
+      const hotLitersSaved = litersSaved * HOT_WATER_SHARE;
+      const kwhSaved = hotLitersSaved * KWH_PER_LITER_HOT;
+      const eurEnergySaved = kwhSaved * ENERGY_EUR_PER_KWH;
+
+      const eurTotalSaved = eurWaterSaved + eurEnergySaved;
+
+      currentConsumptionEl.textContent = fmtInt(litersCurrent);
+      ecoConsumptionEl.textContent = fmtInt(litersEco);
+      moneySavedEl.textContent = fmtEuro(eurTotalSaved);
+    }
+
+    [householdSizeEl, showersPerWeekEl, showerDurationEl].forEach((el) => {
+      el.addEventListener("change", calc);
+      el.addEventListener("input", calc);
+    });
+
+    calc();
+  })();
+</script>
     <!-- Contact Form Section -->
     <section id="contact" class="py-20 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
