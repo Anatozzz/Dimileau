@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimileau - Le Pommeau Qui Change Vos Habitudes | Économisez 30% d'Eau</title>
-    <meta name="description" content="Découvrez le pommeau de douche intelligent qui change de couleur selon votre consommation. Économisez jusqu'à 200€/an sur votre facture d'eau. Installation 2 minutes.">
-   <!-- Favicon Dimileau -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/905fSySW/Capture-d-ecran-2026-03-02-a-14-51-18.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://i.postimg.cc/905fSySW/Capture-d-ecran-2026-03-02-a-14-51-18.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/905fSySW/Capture-d-ecran-2026-03-02-a-14-51-18.png">
-<meta name="theme-color" content="#10B981">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <title>Dimileau | Le pommeau intelligent qui réduit votre consommation d’eau</title>
+    <meta name="description"
+        content="Dimileau est le pommeau intelligent qui change de couleur selon votre consommation. Économisez jusqu'à 30% d'eau dès le premier mois. Installation en 2 minutes.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="https://i.postimg.cc/905fSySW/Capture-d-ecran-2026-03-02-a-14-51-18.png">
+    <link rel="apple-touch-icon"
+        href="https://i.postimg.cc/905fSySW/Capture-d-ecran-2026-03-02-a-14-51-18.png">
+    <meta name="theme-color" content="#10B981">
+
+    <!-- Open Graph (partage réseaux sociaux) -->
+    <meta property="og:title" content="Dimileau | Réduisez votre consommation d’eau sans changer vos habitudes">
+    <meta property="og:description"
+        content="Le pommeau intelligent qui vous guide en temps réel. Jusqu'à 30% d’économies.">
+    <meta property="og:type" content="website">
+    <meta property="og:image"
+        content="https://i.postimg.cc/905fSySW/Capture-d-ecran-2026-03-02-a-14-51-18.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -36,91 +57,46 @@
                             'blue-light': '#E0F2FE',
                             dark: '#0F172A'
                         }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow-green': 'glowGreen 2s ease-in-out infinite alternate',
-                        'glow-orange': 'glowOrange 2s ease-in-out infinite alternate',
-                        'glow-red': 'glowRed 2s ease-in-out infinite alternate',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        glowGreen: {
-                            '0%': { boxShadow: '0 0 5px #10B981' },
-                            '100%': { boxShadow: '0 0 20px #10B981, 0 0 40px #10B981' },
-                        },
-                        glowOrange: {
-                            '0%': { boxShadow: '0 0 5px #F97316' },
-                            '100%': { boxShadow: '0 0 20px #F97316, 0 0 40px #F97316' },
-                        },
-                        glowRed: {
-                            '0%': { boxShadow: '0 0 5px #EF4444' },
-                            '100%': { boxShadow: '0 0 20px #EF4444, 0 0 40px #EF4444' },
-                        }
                     }
                 }
             }
         }
     </script>
-    
+
+    <!-- Custom Styles -->
     <style>
         .gradient-text {
             background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-        
+
         .glass-effect {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 50%, #F0FDF4 100%);
         }
-        
-        .sticky-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .sticky-cta.visible {
-            transform: translateY(0);
-        }
-        
-        .color-indicator {
-            transition: all 0.5s ease;
-        }
-        
+
         .faq-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-        
+
         .faq-content.active {
             max-height: 500px;
         }
-        
-        .blog-card:hover .blog-overlay {
-            opacity: 1;
-        }
-        
+
         .input-focus:focus {
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
         }
     </style>
+
 </head>
+
 <body class="font-sans text-slate-800 bg-white antialiased">
 
    <!-- Header -->
