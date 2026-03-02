@@ -1079,82 +1079,229 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Questions fréquentes</h2>
-                <p class="text-slate-600">Tout ce que vous devez savoir avant de franchir le pas</p>
+    <!-- FAQ Section (refonte design) -->
+<section class="relative py-20 lg:py-32 bg-white overflow-hidden" id="faq">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-transparent to-slate-50/60"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Title -->
+    <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-14">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-semibold shadow-sm">
+        <i data-lucide="help-circle" class="w-4 h-4 text-brand-green"></i>
+        FAQ
+      </span>
+      <h2 class="text-3xl lg:text-5xl font-extrabold text-slate-900 mt-5 mb-4">
+        Questions fréquentes
+      </h2>
+      <p class="text-lg text-slate-600">
+        Réponses claires, sans blabla. Si vous avez un doute : demandez votre démo.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#contact"
+           class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+          Demander une démonstration
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#calcul"
+           class="inline-flex items-center justify-center gap-2 px-7 py-3 bg-white text-slate-800 font-bold rounded-full border border-slate-200 hover:border-brand-blue hover:text-brand-blue transition">
+          Simuler mes économies
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ list -->
+    <div class="bg-white/70 backdrop-blur rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+      <div class="divide-y divide-slate-200">
+
+        <!-- Item 1 -->
+        <div class="group">
+          <button type="button"
+                  class="faq-btn w-full px-6 sm:px-8 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 w-9 h-9 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center">
+                <i data-lucide="plug" class="w-5 h-5 text-brand-green"></i>
+              </span>
+              <div>
+                <p class="font-extrabold text-slate-900">Est-ce compatible avec ma douche actuelle ?</p>
+                <p class="text-sm text-slate-500">La question n°1 avant d’acheter.</p>
+              </div>
             </div>
-
-            <div class="space-y-4">
-                <div class="border border-slate-200 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
-                        <span class="font-semibold text-slate-900">Est-ce compatible avec ma douche actuelle ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
-                    </button>
-                    <div class="faq-content bg-white px-6">
-                        <p class="py-4 text-slate-600">
-                            Dimileau est compatible avec 95% des installations françaises. Il s'adapte aux flexibles standard (diamètre 1/2 pouce). 
-                            Si jamais il ne convenait pas, nous assurons l'échange gratuit sous 30 jours.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
-                        <span class="font-semibold text-slate-900">Quelle est la durée de vie du produit ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
-                    </button>
-                    <div class="faq-content bg-white px-6">
-                        <p class="py-4 text-slate-600">
-                            Sans batterie ni électronique complexe, Dimileau est conçu pour durer 10+ ans. La turbine hydraulique est en acier inoxydable 
-                            et anti-calcaire. Garantie 3 ans incluse.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
-                        <span class="font-semibold text-slate-900">Est-ce sécurisé (électricité + eau) ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
-                    </button>
-                    <div class="faq-content bg-white px-6">
-                        <p class="py-4 text-slate-600">
-                            Absolument. Le système fonctionne par micro-turbine hydraulique. Zéro batterie, zéro connexion électrique, zéro risque. 
-                            Les LED sont alimentées par l'énergie cinétique de l'eau, sans contact électrique avec l'eau.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
-                        <span class="font-semibold text-slate-900">Les économies sont-elles réellement visibles ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
-                    </button>
-                    <div class="faq-content bg-white px-6">
-                        <p class="py-4 text-slate-600">
-                            Oui. Nos clients constatent une réduction moyenne de 30% dès le premier mois. Pour une famille de 4, 
-                            cela représente environ 180-240€ d'économie annuelle (eau + chauffage). Nous fournissons un suivi mensuel pour vous permettre de constater vos progrès.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
-                        <span class="font-semibold text-slate-900">Puis-je l'installer moi-même ?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
-                    </button>
-                    <div class="faq-content bg-white px-6">
-                        <p class="py-4 text-slate-600">
-                            Totalement. C'est un simple vissage comme un pommeau traditionnel. Aucun outil nécessaire, mode d'emploi illustré fourni. 
-                            Si besoin, notre service client peut vous guider par vidéo en direct.
-                        </p>
-                    </div>
-                </div>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 text-slate-600">
+              Dimileau est compatible avec 95% des installations françaises. Il s’adapte aux flexibles standard (diamètre 1/2 pouce).
+              Si jamais il ne convenait pas, échange gratuit sous 30 jours.
             </div>
+          </div>
         </div>
-    </section>
+
+        <!-- Item 2 -->
+        <div class="group">
+          <button type="button"
+                  class="faq-btn w-full px-6 sm:px-8 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 w-9 h-9 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center">
+                <i data-lucide="timer" class="w-5 h-5 text-brand-blue"></i>
+              </span>
+              <div>
+                <p class="font-extrabold text-slate-900">Quelle est la durée de vie du produit ?</p>
+                <p class="text-sm text-slate-500">On veut du solide, pas du gadget.</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 text-slate-600">
+              Sans batterie ni électronique complexe, Dimileau est conçu pour durer 10+ ans.
+              Turbine hydraulique en acier inoxydable et anti-calcaire. Garantie 3 ans incluse.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="group">
+          <button type="button"
+                  class="faq-btn w-full px-6 sm:px-8 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 w-9 h-9 rounded-xl bg-slate-900/10 border border-slate-900/20 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-5 h-5 text-slate-900"></i>
+              </span>
+              <div>
+                <p class="font-extrabold text-slate-900">Est-ce sécurisé (électricité + eau) ?</p>
+                <p class="text-sm text-slate-500">Zéro risque, sinon on oublie.</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 text-slate-600">
+              Absolument. Le système fonctionne par micro-turbine hydraulique : zéro batterie, zéro connexion électrique, zéro risque.
+              Les LED sont alimentées par l’énergie cinétique de l’eau, sans contact électrique avec l’eau.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="group">
+          <button type="button"
+                  class="faq-btn w-full px-6 sm:px-8 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 w-9 h-9 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center">
+                <i data-lucide="trending-down" class="w-5 h-5 text-brand-green"></i>
+              </span>
+              <div>
+                <p class="font-extrabold text-slate-900">Les économies sont-elles réellement visibles ?</p>
+                <p class="text-sm text-slate-500">La seule chose qui compte.</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 text-slate-600">
+              Oui. Nos clients constatent une réduction moyenne de 30% dès le premier mois.
+              Pour une famille de 4 : environ 180–240€ d’économie annuelle (eau + chauffage).
+              Un suivi mensuel vous permet de voir la progression.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="group">
+          <button type="button"
+                  class="faq-btn w-full px-6 sm:px-8 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 w-9 h-9 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center">
+                <i data-lucide="wrench" class="w-5 h-5 text-brand-orange"></i>
+              </span>
+              <div>
+                <p class="font-extrabold text-slate-900">Puis-je l’installer moi-même ?</p>
+                <p class="text-sm text-slate-500">Si c’est compliqué, personne ne le fait.</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 text-slate-600">
+              Totalement. C’est un simple vissage comme un pommeau traditionnel.
+              Aucun outil nécessaire, mode d’emploi illustré fourni.
+              Si besoin, notre service client peut vous guider en vidéo.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom reassurance -->
+      <div class="px-6 sm:px-8 py-6 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-2xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-5 h-5 text-brand-green"></i>
+          </span>
+          <p class="text-sm text-slate-600">
+            <span class="font-bold text-slate-900">Toujours un doute ?</span>
+            Demandez une démo : réponse sous 24h.
+          </p>
+        </div>
+        <a href="#contact"
+           class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+          Je veux ma démo
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ JS (à mettre une seule fois, en bas de page) -->
+<script>
+  (function () {
+    const buttons = document.querySelectorAll(".faq-btn");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector(".faq-icon");
+
+        // Close others
+        buttons.forEach((otherBtn) => {
+          if (otherBtn === btn) return;
+          const otherContent = otherBtn.nextElementSibling;
+          const otherIcon = otherBtn.querySelector(".faq-icon");
+          if (otherContent) {
+            otherContent.style.maxHeight = null;
+            otherContent.classList.remove("active");
+          }
+          if (otherIcon) otherIcon.classList.remove("rotate-180");
+        });
+
+        // Toggle current
+        const isOpen = content.classList.contains("active");
+        if (isOpen) {
+          content.style.maxHeight = null;
+          content.classList.remove("active");
+          if (icon) icon.classList.remove("rotate-180");
+        } else {
+          content.classList.add("active");
+          content.style.maxHeight = content.scrollHeight + "px";
+          if (icon) icon.classList.add("rotate-180");
+        }
+      });
+    });
+
+    // Optional: open first item on load
+    // buttons[0]?.click();
+  })();
+</script>
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta bg-white border-t border-slate-200 p-4 md:hidden" id="stickyCta">
