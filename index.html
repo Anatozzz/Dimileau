@@ -117,42 +117,36 @@
 </head>
 <body class="font-sans text-slate-800 bg-white antialiased">
 
-   <!-- Header (refonte design) -->
+   <!-- Header -->
 <header id="header"
-  class="fixed top-0 w-full z-40 glass-effect border-b border-slate-200/60 transition-all duration-300">
+  class="fixed top-0 w-full z-40 glass-effect border-b border-slate-200/60 transition-all duration-300 bg-white/80 backdrop-blur-md">
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
 
       <!-- Logo -->
-      <a href="#top" class="flex items-center gap-2 group">
-        <div
-          class="w-9 h-9 rounded-2xl bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center shadow-sm ring-1 ring-black/5">
-          <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
-        </div>
-        <div class="leading-tight">
-          <span class="block font-extrabold text-lg text-slate-900 group-hover:text-brand-green transition">Dimileau</span>
-          <span class="hidden sm:block text-[11px] text-slate-500 -mt-0.5">Pommeau intelligent • Économie d’eau</span>
-        </div>
+      <a href="#top" class="flex items-center gap-3 group">
+
+        <!-- Image logo -->
+        <img 
+          src="https://i.postimg.cc/JhZGM6Lw/Capture-d-ecran-2026-03-02-a-14-35-19.png"
+          alt="Logo Dimileau"
+          class="h-9 w-auto object-contain"
+        >
+
+        <!-- Brand text -->
+        <span class="font-extrabold text-xl text-slate-900 group-hover:text-brand-green transition">
+          Dimileau
+        </span>
+
       </a>
 
       <!-- Navigation (desktop) -->
-      <nav class="hidden md:flex items-center gap-2">
-        <a href="#probleme"
-          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
-          Le Problème
-        </a>
-        <a href="#solution"
-          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
-          La Solution
-        </a>
-        <a href="#calcul"
-          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
-          Simulateur
-        </a>
-        <a href="#blog"
-          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
-          Blog
-        </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#probleme" class="text-sm font-semibold text-slate-600 hover:text-brand-green transition">Le Problème</a>
+        <a href="#solution" class="text-sm font-semibold text-slate-600 hover:text-brand-green transition">La Solution</a>
+        <a href="#calcul" class="text-sm font-semibold text-slate-600 hover:text-brand-green transition">Simulateur</a>
+        <a href="#blog" class="text-sm font-semibold text-slate-600 hover:text-brand-green transition">Blog</a>
       </nav>
 
       <!-- Right actions -->
@@ -160,27 +154,30 @@
 
         <!-- Instagram -->
         <a href="https://www.instagram.com/dimil_eau/"
-          target="_blank" rel="noopener"
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green hover:shadow-sm transition"
-          aria-label="Instagram Dimileau">
+           target="_blank"
+           rel="noopener"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green transition"
+           aria-label="Instagram Dimileau">
           <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
 
-        <!-- CTA desktop -->
+        <!-- CTA -->
         <a href="#contact"
-          class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-extrabold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+           class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
           Démonstration gratuite
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
 
-        <!-- Mobile menu button -->
+        <!-- Mobile menu -->
         <button type="button"
           class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green transition"
-          id="mobileMenuBtn" aria-label="Ouvrir le menu">
+          id="mobileMenuBtn"
+          aria-label="Ouvrir le menu">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
 
       </div>
+
     </div>
   </div>
 </header>
