@@ -118,45 +118,79 @@
 <body class="font-sans text-slate-800 bg-white antialiased">
 
     <!-- Header -->
-    <header class="fixed w-full top-0 z-40 glass-effect border-b border-slate-200/50 transition-all duration-300" id="header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center">
-                        <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
-                    </div>
-                    <span class="font-bold text-xl text-slate-900">Dimileau</span>
-                </div>
-                
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="#probleme" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Le Problème</a>
-                    <a href="#solution" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">La Solution</a>
-                    <a href="#calcul" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Simulateur</a>
-                    <a href="#blog" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Blog</a>
-                </nav>
-
-                <div class="flex items-center gap-4">
-                    <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
-                        Démonstration gratuite
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <button class="md:hidden p-2" id="mobileMenuBtn">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
+<header class="fixed w-full top-0 z-40 glass-effect border-b border-slate-200/50 transition-all duration-300" id="header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center">
+          <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
         </div>
-    </header>
+        <span class="font-bold text-xl text-slate-900">Dimileau</span>
+      </div>
 
-    <!-- Mobile Menu -->
-    <div class="fixed inset-0 z-30 bg-white transform translate-x-full transition-transform duration-300 md:hidden" id="mobileMenu">
-        <div class="p-6 pt-20 space-y-4">
-            <a href="#probleme" class="block text-lg font-medium py-2 border-b">Le Problème</a>
-            <a href="#solution" class="block text-lg font-medium py-2 border-b">La Solution</a>
-            <a href="#calcul" class="block text-lg font-medium py-2 border-b">Simulateur</a>
-            <a href="#contact" class="block w-full text-center py-3 bg-brand-green text-white rounded-lg font-semibold">Démonstration gratuite</a>
-        </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#probleme" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Le Problème</a>
+        <a href="#solution" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">La Solution</a>
+        <a href="#calcul" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Simulateur</a>
+        <a href="#blog" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Blog</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Instagram (desktop) -->
+        <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+           class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-brand-green hover:text-brand-green transition"
+           aria-label="Instagram Dimileau">
+          <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+
+        <!-- Chat (desktop) -->
+        <button type="button" id="chatBtn"
+                class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-brand-green hover:text-brand-green transition"
+                aria-label="Ouvrir le chat">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+        </button>
+
+        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+          Démonstration gratuite
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+
+        <button class="md:hidden p-2" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
     </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="fixed inset-0 z-30 bg-white transform translate-x-full transition-transform duration-300 md:hidden" id="mobileMenu">
+  <div class="p-6 pt-20 space-y-4">
+    <a href="#probleme" class="block text-lg font-medium py-2 border-b">Le Problème</a>
+    <a href="#solution" class="block text-lg font-medium py-2 border-b">La Solution</a>
+    <a href="#calcul" class="block text-lg font-medium py-2 border-b">Simulateur</a>
+
+    <!-- Instagram (mobile) -->
+    <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+       class="flex items-center gap-3 text-lg font-medium py-2 border-b">
+      <i data-lucide="instagram" class="w-5 h-5"></i>
+      Instagram
+    </a>
+
+    <!-- Chat (mobile) -->
+    <button type="button" id="chatBtnMobile"
+            class="w-full flex items-center gap-3 text-lg font-medium py-2 border-b text-left">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      Chat / Contact
+    </button>
+
+    <a href="#contact" class="block w-full text-center py-3 bg-brand-green text-white rounded-lg font-semibold">
+      Démonstration gratuite
+    </a>
+  </div>
+</div>
 
     <!-- Hero Section -->
 <section class="hero-gradient pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
