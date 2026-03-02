@@ -374,66 +374,175 @@
   </div>
 </section>
 
-    <!-- Problem Section -->
-    <section id="probleme" class="py-20 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <span class="text-brand-orange font-semibold text-sm uppercase tracking-wider">Le problème</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-4">
-                    Votre douche vous coûte plus cher que vous ne le pensez
-                </h2>
-                <p class="text-lg text-slate-600">
-                    Une douche moyenne de 8 minutes consomme 80 litres d'eau. 
-                    Multipliez par 365 jours et une famille de 4 personnes...
-                </p>
-            </div>
+    <!-- Problem Section (revamp) -->
+<section id="probleme" class="py-20 lg:py-32 bg-white relative overflow-hidden">
+  <!-- soft background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-brand-orange/10 blur-3xl"></div>
+    <div class="absolute -bottom-28 -right-28 w-96 h-96 rounded-full bg-brand-blue/10 blur-3xl"></div>
+  </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-red-50 rounded-2xl p-8 border border-red-100 text-center hover:shadow-lg transition">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="banknote" class="w-8 h-8 text-brand-red"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-brand-red mb-2">240€</div>
-                    <p class="text-slate-700 font-semibold mb-2">Facture d'eau/an</p>
-                    <p class="text-sm text-slate-500">Pour une famille de 4 personnes prenant des douches quotidiennes</p>
-                </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Heading -->
+    <div class="max-w-3xl mx-auto text-center mb-14 lg:mb-16">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-orange/20 text-brand-orange text-sm font-semibold shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+        Le problème
+      </span>
 
-                <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100 text-center hover:shadow-lg transition">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="droplet" class="w-8 h-8 text-brand-orange"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-brand-orange mb-2">116m³</div>
-                    <p class="text-slate-700 font-semibold mb-2">Eau consommée</p>
-                    <p class="text-sm text-slate-500">Juste pour les douches, l'équivalent de 46 piscines olympiques/an</p>
-                </div>
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-4 mb-4 leading-tight">
+        Votre douche vous coûte plus cher<br class="hidden sm:block"> que vous ne le pensez
+      </h2>
 
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:shadow-lg transition">
-                    <div class="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="cloud" class="w-8 h-8 text-slate-600"></i>
-                    </div>
-                    <div class="text-4xl font-extrabold text-slate-700 mb-2">450kg</div>
-                    <p class="text-slate-700 font-semibold mb-2">CO2 émis</p>
-                    <p class="text-sm text-slate-500">Correspond à un aller-retour Paris-Londres en avion</p>
-                </div>
-            </div>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Une douche moyenne de <strong>8 minutes</strong> consomme environ <strong>80 L</strong>.
+        Multipliez par <strong>365 jours</strong> et une <strong>famille de 4</strong>…
+      </p>
+    </div>
 
-            <div class="bg-slate-900 rounded-3xl p-8 lg:p-12 text-center text-white relative overflow-hidden">
-                <div class="relative z-10 max-w-2xl mx-auto">
-                    <i data-lucide="alert-triangle" class="w-12 h-12 text-brand-orange mx-auto mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-4">Et si vous ne faisiez rien ?</h3>
-                    <p class="text-slate-300 mb-8 text-lg">
-                        Dans 5 ans, vous aurez dépensé <strong class="text-white">1,200€</strong> d'eau chaude 
-                        pour des douches trop longues. Sans compter l'impact environnemental cumulé.
-                    </p>
-                    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition">
-                        Je veux agir maintenant
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-brand-red/20"></div>
-            </div>
+    <!-- Stats -->
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-14">
+
+      <!-- Card 1 -->
+      <div class="group rounded-3xl p-7 lg:p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl transition duration-300">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-12 h-12 rounded-2xl bg-brand-red/10 flex items-center justify-center">
+            <i data-lucide="banknote" class="w-6 h-6 text-brand-red"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full">
+            Coût annuel
+          </span>
         </div>
-    </section>
+
+        <div class="flex items-end gap-3 mb-2">
+          <div class="text-4xl font-extrabold text-slate-900">240€</div>
+          <div class="text-sm font-semibold text-brand-red">≈</div>
+          <div class="text-sm text-slate-500">famille / an</div>
+        </div>
+
+        <p class="text-slate-700 font-semibold mb-4">Facture d’eau</p>
+
+        <div class="h-2 rounded-full bg-slate-100 overflow-hidden">
+          <div class="h-2 w-4/5 bg-brand-red/60"></div>
+        </div>
+
+        <p class="text-sm text-slate-500 mt-4 leading-relaxed">
+          Pour une famille de 4 prenant des douches quotidiennes (eau + eau chaude).
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group rounded-3xl p-7 lg:p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl transition duration-300">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-12 h-12 rounded-2xl bg-brand-orange/10 flex items-center justify-center">
+            <i data-lucide="droplet" class="w-6 h-6 text-brand-orange"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full">
+            Volume
+          </span>
+        </div>
+
+        <div class="flex items-end gap-3 mb-2">
+          <div class="text-4xl font-extrabold text-slate-900">116m³</div>
+          <div class="text-sm text-slate-500">/ an</div>
+        </div>
+
+        <p class="text-slate-700 font-semibold mb-4">Eau consommée</p>
+
+        <div class="h-2 rounded-full bg-slate-100 overflow-hidden">
+          <div class="h-2 w-3/5 bg-brand-orange/70"></div>
+        </div>
+
+        <p class="text-sm text-slate-500 mt-4 leading-relaxed">
+          Juste pour les douches. À l’échelle d’un foyer, l’impact est énorme.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group rounded-3xl p-7 lg:p-8 bg-white border border-slate-200 shadow-sm hover:shadow-xl transition duration-300">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center">
+            <i data-lucide="cloud" class="w-6 h-6 text-brand-blue"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full">
+            Empreinte
+          </span>
+        </div>
+
+        <div class="flex items-end gap-3 mb-2">
+          <div class="text-4xl font-extrabold text-slate-900">450kg</div>
+          <div class="text-sm text-slate-500">CO₂ / an</div>
+        </div>
+
+        <p class="text-slate-700 font-semibold mb-4">Émissions</p>
+
+        <div class="h-2 rounded-full bg-slate-100 overflow-hidden">
+          <div class="h-2 w-2/3 bg-brand-blue/70"></div>
+        </div>
+
+        <p class="text-sm text-slate-500 mt-4 leading-relaxed">
+          Chauffage de l’eau + usage quotidien : l’empreinte grimpe vite, sans qu’on s’en rende compte.
+        </p>
+      </div>
+    </div>
+
+    <!-- Impact CTA block -->
+    <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-orange/25 to-brand-green/20"></div>
+
+      <div class="relative z-10 p-8 lg:p-12">
+        <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-white text-sm font-semibold mb-5">
+              <i data-lucide="alert-triangle" class="w-4 h-4 text-brand-orange"></i>
+              Projection
+            </div>
+
+            <h3 class="text-2xl lg:text-3xl font-extrabold text-white mb-3">
+              Et si vous ne faisiez rien ?
+            </h3>
+
+            <p class="text-slate-200 text-lg leading-relaxed">
+              Dans 5 ans, vous aurez dépensé environ <strong class="text-white">1 200€</strong> en eau chaude
+              pour des douches trop longues — sans compter l’impact environnemental cumulé.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3 text-sm">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-slate-100">
+                <i data-lucide="timer" class="w-4 h-4 text-brand-orange"></i>
+                Le coût s’accumule chaque jour
+              </span>
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-slate-100">
+                <i data-lucide="leaf" class="w-4 h-4 text-brand-green"></i>
+                Réduction immédiate du gaspillage
+              </span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <a href="#contact"
+               class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-green text-white font-extrabold rounded-full hover:bg-green-600 transition shadow-2xl shadow-green-500/30">
+              Je veux agir maintenant
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+
+            <a href="#calcul"
+               class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white font-semibold rounded-full border border-white/15 hover:bg-white/15 transition">
+              Voir mes économies
+              <i data-lucide="calculator" class="w-5 h-5"></i>
+            </a>
+
+            <p class="text-xs text-slate-300 text-center">
+              Gratuit • Sans engagement • Réponse sous 24h
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- Solution Section (refonte design) -->
 <section id="solution" class="relative py-20 lg:py-32 bg-slate-50 overflow-hidden">
