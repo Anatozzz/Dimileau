@@ -64,36 +64,60 @@
     </script>
 
     <!-- Custom Styles -->
-    <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+<style>
+  /* Texte dégradé plus doux (moins flashy) */
+  .gradient-text {
+    background: linear-gradient(110deg, #0EA5E9 0%, #10B981 55%, #22C55E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
+  /* Glass plus propre + bordure légère */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
 
-        .hero-gradient {
-            background: linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 50%, #F0FDF4 100%);
-        }
+  /* Hero gradient plus homogène */
+  .hero-gradient {
+    background:
+      radial-gradient(900px 500px at 15% 10%, rgba(14, 165, 233, 0.22) 0%, rgba(14, 165, 233, 0) 60%),
+      radial-gradient(900px 500px at 85% 20%, rgba(16, 185, 129, 0.20) 0%, rgba(16, 185, 129, 0) 55%),
+      linear-gradient(135deg, #F8FAFC 0%, #F0FDF4 45%, #EFF6FF 100%);
+  }
 
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+  /* FAQ animation plus smooth (et pas de "jump") */
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    opacity: 0;
+  }
 
-        .faq-content.active {
-            max-height: 500px;
-        }
+  .faq-content.active {
+    max-height: 520px;
+    opacity: 1;
+  }
 
-        .input-focus:focus {
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-        }
-    </style>
+  /* Focus plus clean et cohérent (inputs/selects) */
+  .input-focus:focus {
+    outline: none;
+    border-color: rgba(16, 185, 129, 0.55);
+    box-shadow:
+      0 0 0 4px rgba(16, 185, 129, 0.18),
+      0 10px 28px rgba(15, 23, 42, 0.06);
+  }
+
+  /* Bonus : rendu plus net sur certains écrans */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+</style>
 
 </head>
 
