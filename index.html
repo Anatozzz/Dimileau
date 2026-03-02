@@ -122,6 +122,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       
+      <!-- Logo -->
       <div class="flex items-center gap-2">
         <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center">
           <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
@@ -129,6 +130,7 @@
         <span class="font-bold text-xl text-slate-900">Dimileau</span>
       </div>
 
+      <!-- Navigation -->
       <nav class="hidden md:flex items-center gap-8">
         <a href="#probleme" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Le Problème</a>
         <a href="#solution" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">La Solution</a>
@@ -136,29 +138,29 @@
         <a href="#blog" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Blog</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <!-- Instagram (desktop) -->
-        <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
-           class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-brand-green hover:text-brand-green transition"
+      <!-- Right actions -->
+      <div class="flex items-center gap-4">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/dimil_eau/" 
+           target="_blank" 
+           rel="noopener"
+           class="hidden md:inline-flex text-slate-600 hover:text-brand-green transition"
            aria-label="Instagram Dimileau">
-          <i data-lucide="instagram" class="w-5 h-5"></i>
+          <i data-lucide="instagram" class="w-6 h-6"></i>
         </a>
 
-        <!-- Chat (desktop) -->
-        <button type="button" id="chatBtn"
-                class="hidden md:inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-brand-green hover:text-brand-green transition"
-                aria-label="Ouvrir le chat">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-        </button>
-
+        <!-- CTA -->
         <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
           Démonstration gratuite
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
 
+        <!-- Mobile menu button -->
         <button class="md:hidden p-2" id="mobileMenuBtn" aria-label="Ouvrir le menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
+
       </div>
 
     </div>
