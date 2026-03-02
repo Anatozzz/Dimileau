@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉcoShower - Le Pommeau Qui Change Vos Habitudes | Économisez 30% d'Eau</title>
+    <meta name="description" content="Découvrez le pommeau de douche intelligent qui change de couleur selon votre consommation. Économisez jusqu'à 200€/an sur votre facture d'eau. Installation 2 minutes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#10B981',
+                            'green-light': '#D1FAE5',
+                            orange: '#F97316',
+                            'orange-light': '#FFEDD5',
+                            red: '#EF4444',
+                            'red-light': '#FEE2E2',
+                            blue: '#0EA5E9',
+                            'blue-light': '#E0F2FE',
+                            dark: '#0F172A'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow-green': 'glowGreen 2s ease-in-out infinite alternate',
+                        'glow-orange': 'glowOrange 2s ease-in-out infinite alternate',
+                        'glow-red': 'glowRed 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glowGreen: {
+                            '0%': { boxShadow: '0 0 5px #10B981' },
+                            '100%': { boxShadow: '0 0 20px #10B981, 0 0 40px #10B981' },
+                        },
+                        glowOrange: {
+                            '0%': { boxShadow: '0 0 5px #F97316' },
+                            '100%': { boxShadow: '0 0 20px #F97316, 0 0 40px #F97316' },
+                        },
+                        glowRed: {
+                            '0%': { boxShadow: '0 0 5px #EF4444' },
+                            '100%': { boxShadow: '0 0 20px #EF4444, 0 0 40px #EF4444' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 50%, #F0FDF4 100%);
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+        
+        .color-indicator {
+            transition: all 0.5s ease;
+        }
+        
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-content.active {
+            max-height: 500px;
+        }
+        
+        .blog-card:hover .blog-overlay {
+            opacity: 1;
+        }
+        
+        .input-focus:focus {
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-40 glass-effect border-b border-slate-200/50 transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center">
+                        <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-bold text-xl text-slate-900">ÉcoShower</span>
+                </div>
+                
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#probleme" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Le Problème</a>
+                    <a href="#solution" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">La Solution</a>
+                    <a href="#calcul" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Simulateur</a>
+                    <a href="#blog" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Blog</a>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+                        Démonstration gratuite
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <button class="md:hidden p-2" id="mobileMenuBtn">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 z-30 bg-white transform translate-x-full transition-transform duration-300 md:hidden" id="mobileMenu">
+        <div class="p-6 pt-20 space-y-4">
+            <a href="#probleme" class="block text-lg font-medium py-2 border-b">Le Problème</a>
+            <a href="#solution" class="block text-lg font-medium py-2 border-b">La Solution</a>
+            <a href="#calcul" class="block text-lg font-medium py-2 border-b">Simulateur</a>
+            <a href="#contact" class="block w-full text-center py-3 bg-brand-green text-white rounded-lg font-semibold">Démonstration gratuite</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-12 lg:mb-0 relative z-10">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-brand-green/20 text-brand-green text-sm font-semibold mb-6 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                        Nouveau : Lancement officiel 2024
+                    </div>
+                    
+                    <h1 class="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Maîtrisez chaque goutte.<br>
+                        <span class="gradient-text">Économisez 30%</span> sur votre facture.
+                    </h1>
+                    
+                    <p class="text-lg lg:text-xl text-slate-600 mb-8 leading-relaxed max-w-lg">
+                        Le premier pommeau de douche intelligent qui change de couleur pour vous guider. 
+                        Vert, orange, rouge : visualisez votre consommation en temps réel.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition shadow-xl shadow-green-500/30 text-lg group">
+                            Recevoir ma démonstration gratuite
+                            <i data-lucide="phone" class="w-5 h-5 group-hover:rotate-12 transition"></i>
+                        </a>
+                        <a href="#calcul" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-700 font-bold rounded-full border-2 border-slate-200 hover:border-brand-blue hover:text-brand-blue transition text-lg">
+                            Simuler mes économies
+                            <i data-lucide="calculator" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 text-sm text-slate-500">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-bold">JD</div>
+                            <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center text-xs font-bold">ML</div>
+                            <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white flex items-center justify-center text-xs font-bold">+2k</div>
+                        </div>
+                        <p>Rejoint par <strong>2,400+</strong> foyers éco-responsables</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-green/20 to-brand-blue/20 rounded-full blur-3xl"></div>
+                    <img src="http://static.photos/technology/640x360/42" alt="ÉcoShower - Pommeau intelligent" class="relative z-10 w-full max-w-md mx-auto rounded-3xl shadow-2xl animate-float">
+                    
+                    <!-- Floating badges -->
+                    <div class="absolute top-10 -left-4 bg-white p-4 rounded-2xl shadow-xl animate-pulse-slow">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-brand-green animate-glow-green"></div>
+                            <span class="text-sm font-bold text-brand-green">Optimal</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">60 litres / douche</p>
+                    </div>
+                    
+                    <div class="absolute bottom-20 -right-4 bg-white p-4 rounded-2xl shadow-xl animate-pulse-slow" style="animation-delay: 1s;">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="trending-down" class="w-4 h-4 text-brand-green"></i>
+                            <span class="text-sm font-bold text-slate-900">-32% consommation</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Famille Martin, Lyon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="probleme" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-brand-orange font-semibold text-sm uppercase tracking-wider">Le problème</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-4">
+                    Votre douche vous coûte plus cher que vous ne le pensez
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Une douche moyenne de 8 minutes consomme 80 litres d'eau. 
+                    Multipliez par 365 jours et une famille de 4 personnes...
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-red-50 rounded-2xl p-8 border border-red-100 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="banknote" class="w-8 h-8 text-brand-red"></i>
+                    </div>
+                    <div class="text-4xl font-extrabold text-brand-red mb-2">240€</div>
+                    <p class="text-slate-700 font-semibold mb-2">Facture d'eau/an</p>
+                    <p class="text-sm text-slate-500">Pour une famille de 4 personnes prenant des douches quotidiennes</p>
+                </div>
+
+                <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="droplet" class="w-8 h-8 text-brand-orange"></i>
+                    </div>
+                    <div class="text-4xl font-extrabold text-brand-orange mb-2">116m³</div>
+                    <p class="text-slate-700 font-semibold mb-2">Eau consommée</p>
+                    <p class="text-sm text-slate-500">Juste pour les douches, l'équivalent de 46 piscines olympiques/an</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="cloud" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <div class="text-4xl font-extrabold text-slate-700 mb-2">450kg</div>
+                    <p class="text-slate-700 font-semibold mb-2">CO2 émis</p>
+                    <p class="text-sm text-slate-500">Correspond à un aller-retour Paris-Londres en avion</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-3xl p-8 lg:p-12 text-center text-white relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <i data-lucide="alert-triangle" class="w-12 h-12 text-brand-orange mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Et si vous ne faisiez rien ?</h3>
+                    <p class="text-slate-300 mb-8 text-lg">
+                        Dans 5 ans, vous aurez dépensé <strong class="text-white">1,200€</strong> d'eau chaude 
+                        pour des douches trop longues. Sans compter l'impact environnemental cumulé.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition">
+                        Je veux agir maintenant
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-brand-red/20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-brand-green font-semibold text-sm uppercase tracking-wider">La solution</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-4">
+                    La technologie qui fait le travail à votre place
+                </h2>
+            </div>
+
+            <!-- Color Explanation -->
+            <div class="grid lg:grid-cols-3 gap-6 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-green hover:scale-105 transition duration-300">
+                    <div class="w-20 h-20 rounded-full bg-brand-green mx-auto mb-6 animate-glow-green flex items-center justify-center">
+                        <i data-lucide="check" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2 text-brand-green">VERT</h3>
+                    <p class="text-slate-600 text-center mb-4">Consommation optimale</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-green"></i> Moins de 60L / douche</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-green"></i> 5-6 min idéales</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-green"></i> Économie maximale</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:scale-105 transition duration-300">
+                    <div class="w-20 h-20 rounded-full bg-brand-orange mx-auto mb-6 animate-glow-orange flex items-center justify-center">
+                        <i data-lucide="clock" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2 text-brand-orange">ORANGE</h3>
+                    <p class="text-slate-600 text-center mb-4">Attention, bientôt la fin</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-orange"></i> 60-80L consommés</li>
+                        <li class="flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-orange"></i> 7-8 min écoulées</li>
+                        <li class="flex items-center gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-orange"></i> Pensez à rincer</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-red hover:scale-105 transition duration-300">
+                    <div class="w-20 h-20 rounded-full bg-brand-red mx-auto mb-6 animate-glow-red flex items-center justify-center">
+                        <i data-lucide="alert-octagon" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-2 text-brand-red">ROUGE</h3>
+                    <p class="text-slate-600 text-center mb-4">Consommation excessive</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-brand-red"></i> Plus de 80L / douche</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-brand-red"></i> +8 minutes</li>
+                        <li class="flex items-center gap-2"><i data-lucide="x-circle" class="w-4 h-4 text-brand-red"></i> Gaspi important</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-brand-blue-light rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-6 h-6 text-brand-blue"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Sans batterie</h4>
+                    <p class="text-sm text-slate-600">Fonctionne uniquement par la pression hydraulique. Zéro maintenance.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-brand-green-light rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="wrench" class="w-6 h-6 text-brand-green"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Installation 2 min</h4>
+                    <p class="text-sm text-slate-600">Vissage universel standard. Aucun outil nécessaire.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Compatible 95%</h4>
+                    <p class="text-sm text-slate-600">Fonctionne avec toutes les installations standards en France.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-brand-orange-light rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="thermometer" class="w-6 h-6 text-brand-orange"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Température stable</h4>
+                    <p class="text-sm text-slate-600">Régulation interne qui maintient la température constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Ils ont déjà changé leurs habitudes</h2>
+                <p class="text-slate-600">Rejoignez les milliers de foyers qui économisent chaque jour</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-50 rounded-2xl p-8 relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-brand-green/20 absolute top-4 right-4"></i>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-300 flex items-center justify-center font-bold text-slate-600">FD</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Famille Durand</p>
+                            <p class="text-sm text-slate-500">4 personnes, Lyon</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-4">"Nous avons réduit notre facture d'eau de 28% dès le premier mois. Les enfants adorent faire la course pour rester dans le vert !"</p>
+                    <div class="flex items-center gap-1 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-brand-green/20 absolute top-4 right-4"></i>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-300 flex items-center justify-center font-bold text-slate-600">SB</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Sophie & Benoit</p>
+                            <p class="text-sm text-slate-500">Couple, Bordeaux</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-4">"Installation en 2 minutes chrono. Le design est superbe et on se rend vraiment compte de sa consommation. Je recommande à 100%."</p>
+                    <div class="flex items-center gap-1 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 relative">
+                    <i data-lucide="quote" class="w-10 h-10 text-brand-green/20 absolute top-4 right-4"></i>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-300 flex items-center justify-center font-bold text-slate-600">ML</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Marie L.</p>
+                            <p class="text-sm text-slate-500">Propriétaire Airbnb, Nice</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 mb-4">"J'ai équipé mes 3 locations. Non seulement je fais des économies, mais mes voyageurs apprécient l'approche éco-responsable."</p>
+                    <div class="flex items-center gap-1 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-12">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-brand-green mb-1">30%</div>
+                    <p class="text-sm text-slate-500">D'économie moyenne</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-brand-blue mb-1">2,400+</div>
+                    <p class="text-sm text-slate-500">Foyers équipés</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-brand-orange mb-1">4.8/5</div>
+                    <p class="text-sm text-slate-500">Note moyenne</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-slate-900 mb-1">72M</div>
+                    <p class="text-sm text-slate-500">Litres économisés</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calcul" class="py-20 lg:py-32 bg-brand-blue-light/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Simulateur</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-4">
+                    Calculez vos économies en 10 secondes
+                </h2>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Personnes dans le foyer</label>
+                        <select id="householdSize" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition">
+                            <option value="1">1 personne</option>
+                            <option value="2" selected>2 personnes</option>
+                            <option value="3">3 personnes</option>
+                            <option value="4">4 personnes</option>
+                            <option value="5">5+ personnes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Douches / semaine / pers</label>
+                        <select id="showersPerWeek" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition">
+                            <option value="5">5 (semaine)</option>
+                            <option value="7" selected>7 (quotidien)</option>
+                            <option value="10">10 (sportif)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Durée moyenne</label>
+                        <select id="showerDuration" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition">
+                            <option value="5">5 minutes</option>
+                            <option value="8" selected>8 minutes</option>
+                            <option value="12">12 minutes</option>
+                            <option value="15">15 minutes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 mb-8 border border-slate-200">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="text-center md:text-left">
+                            <p class="text-sm text-slate-500 mb-1">Votre consommation actuelle estimée</p>
+                            <div class="text-3xl font-bold text-slate-900" id="currentConsumption">--</div>
+                            <p class="text-sm text-slate-500">litres / an</p>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <p class="text-sm text-slate-500 mb-1">Avec ÉcoShower (-30%)</p>
+                            <div class="text-3xl font-bold text-brand-green" id="ecoConsumption">--</div>
+                            <p class="text-sm text-slate-500">litres / an</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-green/10 rounded-2xl p-6 border border-brand-green/20 text-center">
+                    <p class="text-brand-green font-semibold mb-2">💰 Vous économiserez environ</p>
+                    <div class="text-4xl font-bold text-brand-green mb-2" id="moneySaved">--€</div>
+                    <p class="text-slate-600 text-sm mb-4">par an sur votre facture d'eau et d'énergie (chauffage)</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition">
+                        Obtenir mon diagnostic précis
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-brand-green font-semibold text-sm uppercase tracking-wider">Diagnostic gratuit</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-6">
+                        Recevez votre étude personnalisée
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Nos experts analysent votre situation et vous proposent un plan d'économies sur-mesure. 
+                        Démo vidéo offerte sous 24h.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">Diagnostic complet de votre consommation</h4>
+                                <p class="text-sm text-slate-500">Basé sur votre type de logement et vos habitudes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">Simulation précise des économies</h4>
+                                <p class="text-sm text-slate-500">Chiffrage exact sur 1, 3 et 5 ans</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">Conseils personnalisés éco-responsables</h4>
+                                <p class="text-sm text-slate-500">Au-delà du produit, des gestes pour la planète</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-brand-green"></i>
+                        <p class="text-sm text-slate-600">
+                            <strong>Vos données sont protégées.</strong><br>
+                            Conforme RGPD. Jamais de spam. Suppression sur demande immédiate.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-3xl p-8 lg:p-12 shadow-lg">
+                    <form id="leadForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Prénom</label>
+                                <input type="text" name="prenom" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition bg-white" placeholder="Marie">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Nom</label>
+                                <input type="text" name="nom" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition bg-white" placeholder="Dupont">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition bg-white" placeholder="marie@example.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Téléphone</label>
+                            <input type="tel" name="telephone" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition bg-white" placeholder="06 12 34 56 78">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Type de logement</label>
+                                <select name="logement" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition bg-white">
+                                    <option>Appartement</option>
+                                    <option>Maison</option>
+                                    <option>Location Airbnb</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Nombre de personnes</label>
+                                <select name="foyer" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 input-focus outline-none transition bg-white">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 ou +</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="rgpd" required class="mt-1 w-4 h-4 text-brand-green border-slate-300 rounded focus:ring-brand-green">
+                            <label for="rgpd" class="text-sm text-slate-600">
+                                J'accepte de recevoir mon diagnostic gratuit et les informations concernant ÉcoShower. 
+                                Voir notre <a href="#" class="text-brand-green hover:underline">politique de confidentialité</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-brand-green text-white font-bold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30 text-lg flex items-center justify-center gap-2 group">
+                            Recevoir mon diagnostic gratuit
+                            <i data-lucide="sparkles" class="w-5 h-5 group-hover:rotate-12 transition"></i>
+                        </button>
+                    </form>
+
+                    <div id="formSuccess" class="hidden text-center py-12">
+                        <div class="w-20 h-20 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="check" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Merci !</h3>
+                        <p class="text-slate-600">Notre expert vous contactera sous 24h pour votre démonstration personnalisée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Le blog ÉcoShower</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2">
+                        Conseils écologiques & économies
+                    </h2>
+                </div>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="text-brand-green font-semibold hover:underline flex items-center gap-2">
+                        Voir tous les articles
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/nature/640x360/101" alt="Pommeau de douche écologique" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="blog-overlay absolute inset-0 bg-black/50 opacity-0 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-semibold">Lire l'article</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                            <span class="px-2 py-1 bg-brand-green-light text-brand-green rounded">Guide</span>
+                            <span>5 min de lecture</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-green transition">
+                            Les meilleurs pommeaux de douche pour économiser l'eau en 2024
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Comparatif complet des technologies économes en eau. Découvrez pourquoi les LED intelligentes réduisent votre consommation...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <a href="#contact" class="text-brand-green text-sm font-semibold hover:underline">Équiper ma douche →</a>
+                            <a href="#" class="text-slate-400 hover:text-brand-blue">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/minimal/640x360/202" alt="Facture eau" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="blog-overlay absolute inset-0 bg-black/50 opacity-0 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-semibold">Lire l'article</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                            <span class="px-2 py-1 bg-brand-blue-light text-brand-blue rounded">Économies</span>
+                            <span>4 min de lecture</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-green transition">
+                            Comment réduire sa facture d'eau sans changer ses habitudes
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Astuces invisibles et automatisées pour économiser jusqu'à 200€ par an sans effort quotidien...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <a href="#contact" class="text-brand-green text-sm font-semibold hover:underline">Calculer mes économies →</a>
+                            <a href="#" class="text-slate-400 hover:text-brand-blue">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/people/640x360/303" alt="Douche famille" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="blog-overlay absolute inset-0 bg-black/50 opacity-0 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-semibold">Lire l'article</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                            <span class="px-2 py-1 bg-brand-orange-light text-brand-orange rounded">Étude</span>
+                            <span>6 min de lecture</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-green transition">
+                            Combien consomme réellement une douche ? L'étude chiffrée
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Analyse détaillée des consommations selon les âges, saisons et types de logements. Les résultats vous surprendront...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <a href="#contact" class="text-brand-green text-sm font-semibold hover:underline">Tester mon foyer →</a>
+                            <a href="#" class="text-slate-400 hover:text-brand-blue">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/education/640x360/404" alt="Enfant écologie" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="blog-overlay absolute inset-0 bg-black/50 opacity-0 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-semibold">Lire l'article</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-600 rounded">Famille</span>
+                            <span>4 min de lecture</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-green transition">
+                            Comment apprendre aux enfants à économiser l'eau sans les traumatiser
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            Approche ludique et gamification pour sensibiliser les plus jeunes avec des outils visuels et colorés...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <a href="#contact" class="text-brand-green text-sm font-semibold hover:underline">Voir la démo famille →</a>
+                            <a href="#" class="text-slate-400 hover:text-brand-blue">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition group cursor-pointer md:col-span-2 lg:col-span-1">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/nature/640x360/505" alt="Nature eau" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="blog-overlay absolute inset-0 bg-black/50 opacity-0 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-semibold">Lire l'article</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-3">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded">Action</span>
+                            <span>3 min de lecture</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-3 group-hover:text-brand-green transition">
+                            10 actions simples pour réduire sa consommation d'eau à la maison
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            De la cuisine à la salle de bain, gestes quotidiens et investissements malins pour une maison éco-responsable...
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <a href="#contact" class="text-brand-green text-sm font-semibold hover:underline">Commencer maintenant →</a>
+                            <a href="#" class="text-slate-400 hover:text-brand-blue">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Questions fréquentes</h2>
+                <p class="text-slate-600">Tout ce que vous devez savoir avant de franchir le pas</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
+                        <span class="font-semibold text-slate-900">Est-ce compatible avec ma douche actuelle ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6">
+                        <p class="py-4 text-slate-600">
+                            ÉcoShower est compatible avec 95% des installations françaises. Il s'adapte aux flexibles standard (diamètre 1/2 pouce). 
+                            Si jamais il ne convenait pas, nous assurons l'échange gratuit sous 30 jours.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
+                        <span class="font-semibold text-slate-900">Quelle est la durée de vie du produit ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6">
+                        <p class="py-4 text-slate-600">
+                            Sans batterie ni électronique complexe, ÉcoShower est conçu pour durer 10+ ans. La turbine hydraulique est en acier inoxydable 
+                            et anti-calcaire. Garantie 3 ans incluse.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
+                        <span class="font-semibold text-slate-900">Est-ce sécurisé (électricité + eau) ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6">
+                        <p class="py-4 text-slate-600">
+                            Absolument. Le système fonctionne par micro-turbine hydraulique. Zéro batterie, zéro connexion électrique, zéro risque. 
+                            Les LED sont alimentées par l'énergie cinétique de l'eau, sans contact électrique avec l'eau.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
+                        <span class="font-semibold text-slate-900">Les économies sont-elles réellement visibles ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6">
+                        <p class="py-4 text-slate-600">
+                            Oui. Nos clients constatent une réduction moyenne de 30% dès le premier mois. Pour une famille de 4, 
+                            cela représente environ 180-240€ d'économie annuelle (eau + chauffage). Nous fournissons un suivi mensuel pour vous permettre de constater vos progrès.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition">
+                        <span class="font-semibold text-slate-900">Puis-je l'installer moi-même ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon transition"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6">
+                        <p class="py-4 text-slate-600">
+                            Totalement. C'est un simple vissage comme un pommeau traditionnel. Aucun outil nécessaire, mode d'emploi illustré fourni. 
+                            Si besoin, notre service client peut vous guider par vidéo en direct.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta bg-white border-t border-slate-200 p-4 md:hidden" id="stickyCta">
+        <a href="#contact" class="w-full py-3 bg-brand-green text-white font-bold rounded-full flex items-center justify-center gap-2 shadow-lg">
+            Recevoir ma démo gratuite
+            <i data-lucide="phone" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-brand-green flex items-center justify-center">
+                            <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <span class="font-bold text-xl">ÉcoShower</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">
+                        Le pommeau de douche intelligent qui allie écologie et économies. 
+                        Changez vos habitudes, pas votre confort.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
+                            <i data-lucide="music" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-green transition">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#probleme" class="hover:text-white transition">Le Problème</a></li>
+                        <li><a href="#solution" class="hover:text-white transition">Notre Solution</a></li>
+                        <li><a href="#calcul" class="hover:text-white transition">Simulateur</a></li>
+                        <li><a href="#blog" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Demander une démo</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="#" class="hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="#" class="hover:text-white transition">CGV</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookies</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Conseils écologiques</h4>
+                    <p class="text-sm text-slate-400 mb-4">
+                        Suivez-nous pour recevoir chaque semaine des astuces pour réduire votre empreinte carbone.
+                    </p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Votre email" class="flex-1 px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-sm focus:border-brand-green outline-none">
+                        <button class="px-4 py-2 bg-brand-green rounded-lg hover:bg-green-600 transition">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">
+                    © 2024 ÉcoShower. Tous droits réservés.
+                </p>
+                <p class="text-sm text-slate-500 flex items-center gap-2">
+                    <i data-lucide="heart" class="w-4 h-4 text-brand-green"></i>
+                    Fait avec amour pour la planète
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuOpen = false;
+            });
+        });
+
+        // Sticky CTA for mobile
+        const stickyCta = document.getElementById('stickyCta');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            // Show after scrolling past hero (600px)
+            if (currentScroll > 600 && currentScroll > lastScroll && window.innerWidth < 768) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Calculator Logic
+        const householdSize = document.getElementById('householdSize');
+        const showersPerWeek = document.getElementById('showersPerWeek');
+        const showerDuration = document.getElementById('showerDuration');
+        const currentConsumption = document.getElementById('currentConsumption');
+        const ecoConsumption = document.getElementById('ecoConsumption');
+        const moneySaved = document.getElementById('moneySaved');
+
+        function calculateSavings() {
+            const people = parseInt(householdSize.value);
+            const showers = parseInt(showersPerWeek.value);
+            const duration = parseInt(showerDuration.value);
+            
+            // 12 litres par minute (m
