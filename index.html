@@ -679,12 +679,10 @@
 <section id="contact" class="py-20 lg:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      
+
       <!-- Left content -->
       <div>
-        <span class="text-brand-green font-semibold text-sm uppercase tracking-wider">
-          Diagnostic gratuit
-        </span>
+        <span class="text-brand-green font-semibold text-sm uppercase tracking-wider">Diagnostic gratuit</span>
 
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-2 mb-6">
           Recevez votre étude personnalisée
@@ -701,12 +699,8 @@
               <i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
             </div>
             <div>
-              <h4 class="font-semibold text-slate-900">
-                Diagnostic complet de votre consommation
-              </h4>
-              <p class="text-sm text-slate-500">
-                Basé sur votre type de logement et vos habitudes
-              </p>
+              <h4 class="font-semibold text-slate-900">Diagnostic complet de votre consommation</h4>
+              <p class="text-sm text-slate-500">Basé sur votre type de logement et vos habitudes</p>
             </div>
           </div>
 
@@ -715,12 +709,18 @@
               <i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
             </div>
             <div>
-              <h4 class="font-semibold text-slate-900">
-                Simulation précise des économies
-              </h4>
-              <p class="text-sm text-slate-500">
-                Chiffrage exact sur 1, 3 et 5 ans
-              </p>
+              <h4 class="font-semibold text-slate-900">Simulation précise des économies</h4>
+              <p class="text-sm text-slate-500">Chiffrage exact sur 1, 3 et 5 ans</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-brand-green/10 flex items-center justify-center">
+              <i data-lucide="check" class="w-4 h-4 text-brand-green"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-900">Conseils personnalisés éco-responsables</h4>
+              <p class="text-sm text-slate-500">Au-delà du produit, des gestes pour la planète</p>
             </div>
           </div>
         </div>
@@ -736,18 +736,18 @@
 
       <!-- Form -->
       <div class="bg-slate-50 rounded-3xl p-8 lg:p-12 shadow-lg">
-
-        <form 
-          action="https://formsubmit.co/sportifyhs@gmail.com" 
+        <form
+          action="https://formsubmit.co/sportifyhs@gmail.com"
           method="POST"
           class="space-y-6"
         >
-
           <!-- FormSubmit configuration -->
           <input type="hidden" name="_subject" value="Nouvelle demande de diagnostic Dimileau">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="merci.html">
+
+          <!-- ✅ REDIRECTION NETLIFY (URL ABSOLUE) -->
+          <input type="hidden" name="_next" value="https://dimileau.netlify.app/merci.html">
 
           <div class="grid md:grid-cols-2 gap-6">
             <div>
@@ -779,6 +779,31 @@
               placeholder="06 12 34 56 78">
           </div>
 
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Type de logement</label>
+              <select name="logement"
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none transition bg-white">
+                <option>Appartement</option>
+                <option>Maison</option>
+                <option>Location Airbnb</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-slate-700 mb-2">Nombre de personnes</label>
+              <select name="foyer"
+                class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-green focus:ring-2 focus:ring-brand-green/20 outline-none transition bg-white">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 ou +</option>
+              </select>
+            </div>
+          </div>
+
           <div class="flex items-start gap-3">
             <input type="checkbox" id="rgpd" required
               class="mt-1 w-4 h-4 text-brand-green border-slate-300 rounded focus:ring-brand-green">
@@ -792,7 +817,6 @@
             Recevoir mon diagnostic gratuit
             <i data-lucide="sparkles" class="w-5 h-5 group-hover:rotate-12 transition"></i>
           </button>
-
         </form>
       </div>
 
