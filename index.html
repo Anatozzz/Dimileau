@@ -117,56 +117,156 @@
 </head>
 <body class="font-sans text-slate-800 bg-white antialiased">
 
-   <!-- Header -->
-<header class="fixed w-full top-0 z-40 glass-effect border-b border-slate-200/50 transition-all duration-300" id="header">
+   <!-- Header (refonte design) -->
+<header id="header"
+  class="fixed top-0 w-full z-40 glass-effect border-b border-slate-200/60 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
+    <div class="flex items-center justify-between h-16">
 
       <!-- Logo -->
-      <a href="#top" class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center">
+      <a href="#top" class="flex items-center gap-2 group">
+        <div
+          class="w-9 h-9 rounded-2xl bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center shadow-sm ring-1 ring-black/5">
           <i data-lucide="droplets" class="w-5 h-5 text-white"></i>
         </div>
-        <span class="font-bold text-xl text-slate-900">Dimileau</span>
+        <div class="leading-tight">
+          <span class="block font-extrabold text-lg text-slate-900 group-hover:text-brand-green transition">Dimileau</span>
+          <span class="hidden sm:block text-[11px] text-slate-500 -mt-0.5">Pommeau intelligent • Économie d’eau</span>
+        </div>
       </a>
 
-      <!-- Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#probleme" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Le Problème</a>
-        <a href="#solution" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">La Solution</a>
-        <a href="#calcul" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Simulateur</a>
-        <a href="#blog" class="text-sm font-medium text-slate-600 hover:text-brand-green transition">Blog</a>
+      <!-- Navigation (desktop) -->
+      <nav class="hidden md:flex items-center gap-2">
+        <a href="#probleme"
+          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+          Le Problème
+        </a>
+        <a href="#solution"
+          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+          La Solution
+        </a>
+        <a href="#calcul"
+          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+          Simulateur
+        </a>
+        <a href="#blog"
+          class="px-3 py-2 rounded-full text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition">
+          Blog
+        </a>
       </nav>
 
       <!-- Right actions -->
       <div class="flex items-center gap-3">
 
-        <!-- Instagram (visible desktop + mobile) -->
+        <!-- Instagram -->
         <a href="https://www.instagram.com/dimil_eau/"
-           target="_blank"
-           rel="noopener"
-           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green transition"
-           aria-label="Instagram Dimileau">
+          target="_blank" rel="noopener"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green hover:shadow-sm transition"
+          aria-label="Instagram Dimileau">
           <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
 
-        <!-- CTA (desktop) -->
+        <!-- CTA desktop -->
         <a href="#contact"
-           class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+          class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-brand-green text-white font-extrabold rounded-full hover:bg-green-600 transition shadow-lg shadow-green-500/30">
           Démonstration gratuite
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
 
-        <!-- Mobile menu -->
-        <button class="md:hidden p-2" id="mobileMenuBtn" aria-label="Ouvrir le menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <!-- Mobile menu button -->
+        <button type="button"
+          class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green transition"
+          id="mobileMenuBtn" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
 
       </div>
-
     </div>
   </div>
 </header>
+
+<!-- Mobile Menu (refonte design) -->
+<div id="mobileMenu"
+  class="fixed inset-0 z-30 bg-white/95 backdrop-blur-md transform translate-x-full transition-transform duration-300 md:hidden">
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-10">
+
+    <div class="flex items-center justify-between mb-6">
+      <p class="font-extrabold text-slate-900 text-lg">Menu</p>
+      <button type="button" id="mobileMenuClose"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-brand-green hover:text-brand-green transition"
+        aria-label="Fermer le menu">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <nav class="space-y-2">
+      <a href="#probleme"
+        class="mobile-link flex items-center justify-between px-4 py-4 rounded-2xl border border-slate-200 bg-white hover:border-brand-green transition">
+        <span class="font-bold text-slate-900">Le Problème</span>
+        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+      </a>
+      <a href="#solution"
+        class="mobile-link flex items-center justify-between px-4 py-4 rounded-2xl border border-slate-200 bg-white hover:border-brand-green transition">
+        <span class="font-bold text-slate-900">La Solution</span>
+        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+      </a>
+      <a href="#calcul"
+        class="mobile-link flex items-center justify-between px-4 py-4 rounded-2xl border border-slate-200 bg-white hover:border-brand-green transition">
+        <span class="font-bold text-slate-900">Simulateur</span>
+        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+      </a>
+      <a href="#blog"
+        class="mobile-link flex items-center justify-between px-4 py-4 rounded-2xl border border-slate-200 bg-white hover:border-brand-green transition">
+        <span class="font-bold text-slate-900">Blog</span>
+        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+      </a>
+    </nav>
+
+    <div class="mt-8 grid gap-3">
+      <a href="#contact"
+        class="mobile-link inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-brand-green text-white font-extrabold rounded-2xl hover:bg-green-600 transition shadow-lg shadow-green-500/30">
+        Recevoir ma démo
+        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+
+      <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+        class="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-white text-slate-900 font-extrabold rounded-2xl border border-slate-200 hover:border-brand-green hover:text-brand-green transition">
+        Instagram
+        <i data-lucide="instagram" class="w-5 h-5"></i>
+      </a>
+
+      <p class="text-center text-xs text-slate-500 mt-2">
+        Gratuit • Sans engagement • Réponse sous 24h
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Mobile Menu JS (à mettre une seule fois, en bas de page) -->
+<script>
+  (function () {
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+    const closeBtn = document.getElementById("mobileMenuClose");
+    const links = menu ? menu.querySelectorAll(".mobile-link") : [];
+
+    if (!menuBtn || !menu) return;
+
+    const openMenu = () => menu.classList.remove("translate-x-full");
+    const closeMenu = () => menu.classList.add("translate-x-full");
+
+    menuBtn.addEventListener("click", openMenu);
+    closeBtn && closeBtn.addEventListener("click", closeMenu);
+
+    links.forEach((a) => a.addEventListener("click", closeMenu));
+
+    // Close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  })();
+</script>
 
 <!-- Mobile Menu -->
 <div class="fixed inset-0 z-30 bg-white transform translate-x-full transition-transform duration-300 md:hidden" id="mobileMenu">
