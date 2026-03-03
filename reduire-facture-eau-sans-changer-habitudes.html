@@ -1,59 +1,276 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Réduire sa facture d’eau sans changer ses habitudes | Dimileau</title>
-  <meta name="description" content="Découvrez comment réduire votre facture d’eau jusqu’à 200€ par an sans effort ni contrainte. Solutions invisibles et efficaces.">
+  <meta name="description" content="Réduisez votre facture d’eau sans effort : rendre la consommation visible, automatiser l’économie, et adopter les bons leviers en salle de bain." />
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .hero-grad {
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(14,165,233,.22), transparent 60%),
+                  radial-gradient(900px 500px at 90% 30%, rgba(16,185,129,.22), transparent 55%),
+                  linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 50%, #F0FDF4 100%);
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+    }
+  </style>
 </head>
 
 <body class="bg-slate-50 font-sans text-slate-800">
 
-  <main class="max-w-3xl mx-auto px-6 py-20">
-
-    <a href="index.html" class="text-sm text-brand-green font-semibold hover:underline">
-      ← Retour au site
-    </a>
-
-    <h1 class="text-3xl lg:text-4xl font-bold text-slate-900 mt-6 mb-6">
-      Réduire sa facture d’eau sans changer ses habitudes
-    </h1>
-
-    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-      Beaucoup pensent qu’il faut réduire son confort pour économiser de l’eau.
-      En réalité, les solutions les plus efficaces sont celles qui agissent en arrière-plan.
-    </p>
-
-    <h2 class="text-xl font-bold mt-8 mb-4">1. Rendre la consommation visible</h2>
-    <p class="text-slate-600 mb-6 leading-relaxed">
-      Le vrai problème n’est pas la volonté, mais l’absence d’indicateur.
-      Lorsque la consommation devient visible en temps réel, le comportement s’ajuste naturellement.
-    </p>
-
-    <h2 class="text-xl font-bold mt-8 mb-4">2. Automatiser l’économie</h2>
-    <p class="text-slate-600 mb-6 leading-relaxed">
-      Les dispositifs intelligents permettent d’économiser sans effort quotidien :
-      pas besoin de minuterie, pas besoin de se frustrer.
-      Le système agit comme un rappel doux, visuel et immédiat.
-    </p>
-
-    <div class="bg-white rounded-2xl shadow-lg p-8 mt-10 text-center">
-      <h3 class="text-xl font-bold text-slate-900 mb-3">
-        Jusqu’à 200€ économisés par an
-      </h3>
-      <p class="text-slate-600 mb-6">
-        Pour une famille de 4 personnes, la douche représente une part majeure de la facture.
-        Une réduction de 20 à 30% change réellement le budget annuel.
-      </p>
-
-      <a href="index.html#contact"
-         class="inline-block px-8 py-4 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition">
-        Recevoir mon diagnostic gratuit
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 border-b border-slate-200/60 glass">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="https://i.postimg.cc/JhZGM6Lw/Capture-d-ecran-2026-03-02-a-14-35-19.png"
+             alt="Logo Dimileau"
+             class="w-9 h-9 rounded-xl object-contain bg-white border border-slate-200 p-1" />
+        <div>
+          <p class="text-sm font-extrabold text-slate-900 leading-none">Dimileau</p>
+          <p class="text-xs text-slate-500">Blog • Économies & écologie</p>
+        </div>
       </a>
-    </div>
 
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/dimil_eau/"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-500 transition"
+           aria-label="Instagram Dimileau">
+          <img src="https://i.postimg.cc/gJB95pTd/Capture-d-ecran-2026-03-02-a-14-38-14.png"
+               alt="Instagram"
+               class="w-5 h-5" />
+        </a>
+
+        <a href="index.html#contact"
+           class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/25">
+          Diagnostic gratuit
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-grad border-b border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-12">
+      <div class="flex flex-col gap-6">
+
+        <a href="index.html#blog" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-emerald-700 transition w-fit">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          Retour au blog
+        </a>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-emerald-500/20 text-emerald-700 text-sm font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            Économies
+          </span>
+          <span class="text-sm text-slate-600">Lecture : 4 min</span>
+          <span class="text-sm text-slate-600">•</span>
+          <span class="text-sm text-slate-600">Mise à jour : 2026</span>
+        </div>
+
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+          Réduire sa facture d’eau<br class="hidden sm:block" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-emerald-600">
+            sans changer ses habitudes
+          </span>
+        </h1>
+
+        <p class="text-lg text-slate-700 max-w-3xl leading-relaxed">
+          La vérité : les économies qui durent ne viennent pas de la motivation.
+          Elles viennent de <strong>l’environnement</strong> (ce que vous voyez) et de <strong>l’automatisation</strong> (ce qui agit à votre place).
+        </p>
+
+        <!-- Quick takeaways -->
+        <div class="grid sm:grid-cols-3 gap-4 mt-2">
+          <div class="bg-white/80 border border-slate-200 rounded-2xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="eye" class="w-5 h-5 text-emerald-600"></i>
+              <p class="font-bold text-slate-900">Rendre visible</p>
+            </div>
+            <p class="text-sm text-slate-600">Quand c’est clair, vous ajustez sans effort.</p>
+          </div>
+
+          <div class="bg-white/80 border border-slate-200 rounded-2xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="wand-2" class="w-5 h-5 text-sky-600"></i>
+              <p class="font-bold text-slate-900">Automatiser</p>
+            </div>
+            <p class="text-sm text-slate-600">Le système vous guide. Pas besoin d’y penser.</p>
+          </div>
+
+          <div class="bg-white/80 border border-slate-200 rounded-2xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="trending-down" class="w-5 h-5 text-orange-500"></i>
+              <p class="font-bold text-slate-900">Réduire 20–30%</p>
+            </div>
+            <p class="text-sm text-slate-600">Un levier concret sur eau + eau chaude.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Article content -->
+  <main class="max-w-5xl mx-auto px-6 py-14">
+    <div class="grid lg:grid-cols-[1fr_320px] gap-10">
+
+      <!-- Content -->
+      <article class="prose prose-slate max-w-none">
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
+
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Le vrai frein : vous ne “sentez” pas la dépense</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Beaucoup associent économie et frustration. Pourtant, ce qui manque le plus souvent, c’est un indicateur.
+            Sans feedback immédiat, on sous-estime naturellement le temps passé… et donc les litres consommés.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-8">
+            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Ce qui marche</p>
+              <p class="mt-1 font-bold text-slate-900">Un repère en temps réel</p>
+              <p class="text-sm text-slate-600 mt-1">Visuel, simple, impossible à ignorer.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Ce qui ne tient pas</p>
+              <p class="mt-1 font-bold text-slate-900">La “bonne volonté”</p>
+              <p class="text-sm text-slate-600 mt-1">Elle varie. Le système, non.</p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">1) Rendre la consommation visible</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Quand la consommation devient <strong>visible</strong>, le cerveau ajuste automatiquement.
+            Vous ne forcez pas : vous <strong>corrigez</strong>.
+            C’est la différence entre “se contrôler” et “se guider”.
+          </p>
+
+          <div class="rounded-2xl bg-white border border-slate-200 p-6 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="lightbulb" class="w-5 h-5 text-emerald-700"></i>
+              </div>
+              <div>
+                <p class="font-bold text-slate-900">Le déclic le plus rapide</p>
+                <p class="text-sm text-slate-600 mt-1">
+                  Un code couleur ou un indicateur simple crée un “micro-rappel” sans culpabiliser.
+                  Résultat : la durée baisse naturellement.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">2) Automatiser l’économie</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Les meilleures solutions sont celles qui demandent <strong>zéro discipline</strong>.
+            Pas d’appli. Pas de routine. Pas de “penser à”.
+            Vous gardez votre confort, mais vous supprimez le gaspillage.
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
+              <span class="text-slate-600"><strong>Guidage immédiat :</strong> le signal intervient au bon moment.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
+              <span class="text-slate-600"><strong>Moins d’eau chaude :</strong> gros impact sur la facture.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
+              <span class="text-slate-600"><strong>Constance :</strong> les économies durent parce qu’elles ne dépendent pas de l’humeur.</span>
+            </li>
+          </ul>
+
+          <!-- CTA block -->
+          <div class="rounded-3xl bg-slate-900 text-white p-8 text-center">
+            <p class="text-sm font-semibold text-white/70 mb-2">Résumé</p>
+            <h3 class="text-2xl font-extrabold mb-3">Jusqu’à 20–30% d’économies sans contrainte</h3>
+            <p class="text-white/80 mb-6 max-w-xl mx-auto">
+              Pour un foyer, la douche pèse lourd. Un simple ajustement guidé change rapidement la consommation… et la facture.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="index.html#contact"
+                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/25">
+                Recevoir mon diagnostic gratuit
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </a>
+
+              <a href="https://www.instagram.com/dimil_eau/"
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 border border-white/15 font-semibold hover:bg-white/15 transition">
+                Poser une question en DM
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6">
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Check rapide</p>
+          <h3 class="text-lg font-extrabold text-slate-900 mb-3">Vous voulez chiffrer ?</h3>
+          <p class="text-sm text-slate-600 mb-4">
+            Recevez une estimation personnalisée selon votre foyer (gratuit, sans engagement).
+          </p>
+          <a href="index.html#contact"
+             class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition">
+            Faire mon diagnostic
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">À retenir</p>
+          <div class="space-y-3 text-sm text-slate-700">
+            <div class="flex items-start gap-2">
+              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
+              <p>Sans indicateur, on sous-estime toujours.</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
+              <p>La discipline est fragile, le système est constant.</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
+              <p>L’eau chaude est le vrai poste de coût.</p>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
   </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">© 2026 Dimileau • Tous droits réservés</p>
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition">Accueil</a>
+        <span class="text-slate-300">•</span>
+        <a href="index.html#contact" class="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition">Diagnostic</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+  </script>
 
 </body>
 </html>
