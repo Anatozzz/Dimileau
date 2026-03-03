@@ -10,14 +10,26 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    .hero-grad {
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(14,165,233,.22), transparent 60%),
-                  radial-gradient(900px 500px at 90% 30%, rgba(16,185,129,.22), transparent 55%),
-                  linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 50%, #F0FDF4 100%);
+    .hero-grad{
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(14,165,233,.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 30%, rgba(16,185,129,.22), transparent 55%),
+        linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 50%, #F0FDF4 100%);
     }
-    .glass {
-      background: rgba(255, 255, 255, 0.75);
+    .glass{
+      background: rgba(255,255,255,.75);
       backdrop-filter: blur(10px);
+    }
+    .gradient-text{
+      background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .card{
+      border: 1px solid rgba(148,163,184,.35);
+      box-shadow: 0 18px 40px rgba(15,23,42,.08);
     }
   </style>
 </head>
@@ -38,13 +50,10 @@
       </a>
 
       <div class="flex items-center gap-3">
-        <a href="https://www.instagram.com/dimil_eau/"
-           target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-500 transition"
+        <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-400 hover:text-emerald-600 transition"
            aria-label="Instagram Dimileau">
-          <img src="https://i.postimg.cc/gJB95pTd/Capture-d-ecran-2026-03-02-a-14-38-14.png"
-               alt="Instagram"
-               class="w-5 h-5" />
+          <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
 
         <a href="index.html#contact"
@@ -57,219 +66,372 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-grad border-b border-slate-200/60">
-    <div class="max-w-5xl mx-auto px-6 pt-14 pb-12">
-      <div class="flex flex-col gap-6">
+  <section class="hero-grad">
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-10">
+      <a href="index.html#blog"
+         class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        Retour au blog
+      </a>
 
-        <a href="index.html#blog" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-emerald-700 transition w-fit">
-          <i data-lucide="chevron-left" class="w-4 h-4"></i>
-          Retour au blog
-        </a>
+      <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700 text-sm font-semibold shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        Économies • Sans effort
+      </div>
 
-        <div class="flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-emerald-500/20 text-emerald-700 text-sm font-semibold">
-            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-            Économies
-          </span>
-          <span class="text-sm text-slate-600">Lecture : 4 min</span>
-          <span class="text-sm text-slate-600">•</span>
-          <span class="text-sm text-slate-600">Mise à jour : 2026</span>
-        </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+        Réduire sa facture d’eau<br>
+        <span class="gradient-text">sans changer ses habitudes</span>
+      </h1>
 
-        <h1 class="text-3xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-          Réduire sa facture d’eau<br class="hidden sm:block" />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-emerald-600">
-            sans changer ses habitudes
-          </span>
-        </h1>
+      <p class="text-lg text-slate-600 mt-5 leading-relaxed max-w-3xl">
+        Les meilleures économies sont celles qui se font <strong>en arrière-plan</strong> :
+        rendre la consommation visible, automatiser l’économie, et sécuriser les gains sans frustration.
+      </p>
 
-        <p class="text-lg text-slate-700 max-w-3xl leading-relaxed">
-          La vérité : les économies qui durent ne viennent pas de la motivation.
-          Elles viennent de <strong>l’environnement</strong> (ce que vous voyez) et de <strong>l’automatisation</strong> (ce qui agit à votre place).
-        </p>
-
-        <!-- Quick takeaways -->
-        <div class="grid sm:grid-cols-3 gap-4 mt-2">
-          <div class="bg-white/80 border border-slate-200 rounded-2xl p-5">
-            <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="eye" class="w-5 h-5 text-emerald-600"></i>
-              <p class="font-bold text-slate-900">Rendre visible</p>
-            </div>
-            <p class="text-sm text-slate-600">Quand c’est clair, vous ajustez sans effort.</p>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl p-5">
-            <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="wand-2" class="w-5 h-5 text-sky-600"></i>
-              <p class="font-bold text-slate-900">Automatiser</p>
-            </div>
-            <p class="text-sm text-slate-600">Le système vous guide. Pas besoin d’y penser.</p>
-          </div>
-
-          <div class="bg-white/80 border border-slate-200 rounded-2xl p-5">
-            <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="trending-down" class="w-5 h-5 text-orange-500"></i>
-              <p class="font-bold text-slate-900">Réduire 20–30%</p>
-            </div>
-            <p class="text-sm text-slate-600">Un levier concret sur eau + eau chaude.</p>
-          </div>
-        </div>
-
+      <div class="flex flex-wrap gap-2 mt-6 text-sm">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700">
+          <i data-lucide="eye" class="w-4 h-4 text-sky-600"></i>
+          Visibilité = action
+        </span>
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700">
+          <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600"></i>
+          Automatisation
+        </span>
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700">
+          <i data-lucide="wallet" class="w-4 h-4 text-slate-800"></i>
+          Eau + eau chaude
+        </span>
       </div>
     </div>
   </section>
 
-  <!-- Article content -->
   <main class="max-w-5xl mx-auto px-6 py-14">
-    <div class="grid lg:grid-cols-[1fr_320px] gap-10">
 
-      <!-- Content -->
-      <article class="prose prose-slate max-w-none">
-        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-
-          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Le vrai frein : vous ne “sentez” pas la dépense</h2>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            Beaucoup associent économie et frustration. Pourtant, ce qui manque le plus souvent, c’est un indicateur.
-            Sans feedback immédiat, on sous-estime naturellement le temps passé… et donc les litres consommés.
+    <!-- Interactive: "plan d'économies" configurateur -->
+    <section class="rounded-3xl bg-white p-8 card">
+      <div class="flex items-start justify-between gap-6 flex-wrap">
+        <div>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Interactif</p>
+          <h2 class="text-2xl font-extrabold text-slate-900 mt-2">
+            Construisez votre plan d’économies (en 15 secondes)
+          </h2>
+          <p class="text-slate-600 mt-2 max-w-2xl">
+            Cochez vos leviers : vous voyez immédiatement l’économie estimée et un plan d’action.
           </p>
+        </div>
 
-          <div class="grid sm:grid-cols-2 gap-4 mb-8">
-            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
-              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Ce qui marche</p>
-              <p class="mt-1 font-bold text-slate-900">Un repère en temps réel</p>
-              <p class="text-sm text-slate-600 mt-1">Visuel, simple, impossible à ignorer.</p>
+        <a href="index.html#contact"
+           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/25">
+          Diagnostic gratuit
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mt-8">
+        <!-- Controls -->
+        <div class="space-y-5">
+
+          <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+            <div class="flex items-center justify-between">
+              <p class="font-bold text-slate-900">Taille du foyer</p>
+              <span class="text-sm font-semibold text-slate-700"><span id="foyerVal">4</span> pers.</span>
             </div>
-            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
-              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Ce qui ne tient pas</p>
-              <p class="mt-1 font-bold text-slate-900">La “bonne volonté”</p>
-              <p class="text-sm text-slate-600 mt-1">Elle varie. Le système, non.</p>
-            </div>
-          </div>
-
-          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">1) Rendre la consommation visible</h2>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            Quand la consommation devient <strong>visible</strong>, le cerveau ajuste automatiquement.
-            Vous ne forcez pas : vous <strong>corrigez</strong>.
-            C’est la différence entre “se contrôler” et “se guider”.
-          </p>
-
-          <div class="rounded-2xl bg-white border border-slate-200 p-6 mb-8">
-            <div class="flex items-start gap-3">
-              <div class="w-10 h-10 rounded-2xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                <i data-lucide="lightbulb" class="w-5 h-5 text-emerald-700"></i>
-              </div>
-              <div>
-                <p class="font-bold text-slate-900">Le déclic le plus rapide</p>
-                <p class="text-sm text-slate-600 mt-1">
-                  Un code couleur ou un indicateur simple crée un “micro-rappel” sans culpabiliser.
-                  Résultat : la durée baisse naturellement.
-                </p>
-              </div>
+            <input id="foyer" type="range" min="1" max="6" value="4" step="1" class="w-full mt-3 accent-emerald-600">
+            <div class="flex justify-between text-xs text-slate-500 mt-2">
+              <span>1</span><span>6</span>
             </div>
           </div>
 
-          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">2) Automatiser l’économie</h2>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            Les meilleures solutions sont celles qui demandent <strong>zéro discipline</strong>.
-            Pas d’appli. Pas de routine. Pas de “penser à”.
-            Vous gardez votre confort, mais vous supprimez le gaspillage.
-          </p>
-
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
-              <span class="text-slate-600"><strong>Guidage immédiat :</strong> le signal intervient au bon moment.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
-              <span class="text-slate-600"><strong>Moins d’eau chaude :</strong> gros impact sur la facture.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 mt-0.5"></i>
-              <span class="text-slate-600"><strong>Constance :</strong> les économies durent parce qu’elles ne dépendent pas de l’humeur.</span>
-            </li>
-          </ul>
-
-          <!-- CTA block -->
-          <div class="rounded-3xl bg-slate-900 text-white p-8 text-center">
-            <p class="text-sm font-semibold text-white/70 mb-2">Résumé</p>
-            <h3 class="text-2xl font-extrabold mb-3">Jusqu’à 20–30% d’économies sans contrainte</h3>
-            <p class="text-white/80 mb-6 max-w-xl mx-auto">
-              Pour un foyer, la douche pèse lourd. Un simple ajustement guidé change rapidement la consommation… et la facture.
+          <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+            <div class="flex items-center justify-between">
+              <p class="font-bold text-slate-900">Objectif d’économies</p>
+              <span class="text-sm font-semibold text-slate-700"><span id="goalVal">25</span>%</span>
+            </div>
+            <input id="goal" type="range" min="10" max="40" value="25" step="1" class="w-full mt-3 accent-sky-600">
+            <div class="flex justify-between text-xs text-slate-500 mt-2">
+              <span>10%</span><span>40%</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-3">
+              Plus l’objectif est élevé, plus l’automatisation devient importante.
             </p>
+          </div>
 
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+            <p class="font-bold text-slate-900">Leviers “sans effort”</p>
+            <p class="text-sm text-slate-600 mt-1">Cochez ce que vous êtes prêt à activer.</p>
+
+            <div class="mt-4 space-y-3">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="leverVisible" type="checkbox" checked class="mt-1 w-4 h-4 accent-emerald-600">
+                <span class="text-sm text-slate-700">
+                  <strong>Rendre la consommation visible</strong>
+                  <span class="block text-xs text-slate-500">Ex : code couleur / repère immédiat</span>
+                </span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="leverAuto" type="checkbox" checked class="mt-1 w-4 h-4 accent-emerald-600">
+                <span class="text-sm text-slate-700">
+                  <strong>Automatiser le rappel</strong>
+                  <span class="block text-xs text-slate-500">Ex : alerte douce avant “trop long”</span>
+                </span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="leverFlow" type="checkbox" class="mt-1 w-4 h-4 accent-emerald-600">
+                <span class="text-sm text-slate-700">
+                  <strong>Optimiser le débit</strong>
+                  <span class="block text-xs text-slate-500">Sans perdre le confort (jet mieux diffusé)</span>
+                </span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input id="leverHabits" type="checkbox" class="mt-1 w-4 h-4 accent-emerald-600">
+                <span class="text-sm text-slate-700">
+                  <strong>Micro-habitudes (option)</strong>
+                  <span class="block text-xs text-slate-500">Ex : rinçage plus rapide, routine simple</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Results -->
+        <div class="rounded-3xl border border-slate-200 bg-slate-900 text-white p-7 relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-emerald-500/20"></div>
+
+          <div class="relative z-10">
+            <div class="flex items-center gap-2 text-white/80 text-sm font-semibold">
+              <i data-lucide="sparkles" class="w-4 h-4 text-emerald-300"></i>
+              Estimation & plan d’action
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-5">
+              <div class="rounded-2xl bg-white/10 border border-white/15 p-4">
+                <p class="text-xs text-white/70">Économie estimée</p>
+                <p class="text-3xl font-extrabold mt-1"><span id="euroVal">180</span>€</p>
+                <p class="text-xs text-white/60 mt-1">/ an (ordre de grandeur)</p>
+              </div>
+
+              <div class="rounded-2xl bg-white/10 border border-white/15 p-4">
+                <p class="text-xs text-white/70">Niveau d’effort</p>
+                <p class="text-3xl font-extrabold mt-1"><span id="effortVal">Faible</span></p>
+                <p class="text-xs text-white/60 mt-1">selon leviers</p>
+              </div>
+
+              <div class="rounded-2xl bg-white/10 border border-white/15 p-4 col-span-2">
+                <p class="text-xs text-white/70 mb-2">Votre plan (priorité)</p>
+                <ol id="planList" class="space-y-2 text-sm text-white/85 list-decimal pl-5">
+                  <!-- injected -->
+                </ol>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
               <a href="index.html#contact"
-                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/25">
-                Recevoir mon diagnostic gratuit
-                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                 class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white font-extrabold hover:bg-emerald-700 transition">
+                Recevoir mon diagnostic
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
               </a>
 
-              <a href="https://www.instagram.com/dimil_eau/"
-                 target="_blank" rel="noopener"
-                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 border border-white/15 font-semibold hover:bg-white/15 transition">
-                Poser une question en DM
+              <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+                 class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/15 text-white font-semibold hover:bg-white/15 transition">
+                Question en DM
                 <i data-lucide="instagram" class="w-5 h-5"></i>
               </a>
             </div>
+
+            <p class="text-xs text-white/60 mt-4">
+              * Estimation indicative. Les coûts réels dépendent du prix local de l’eau + chauffage.
+            </p>
           </div>
-
         </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- Sidebar -->
-      <aside class="space-y-6">
+    <!-- Article content (simple + premium) -->
+    <section class="mt-14 space-y-10">
+      <div class="rounded-3xl bg-white p-8 card">
+        <h2 class="text-2xl font-extrabold text-slate-900">1) Rendre la consommation visible</h2>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Le frein n’est pas la motivation : c’est l’absence d’indicateur. Quand on voit la consommation en temps réel,
+          le comportement s’ajuste naturellement (sans “se faire violence”).
+        </p>
+        <div class="mt-6 grid md:grid-cols-3 gap-4">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-bold text-slate-900 text-sm">Signal immédiat</p>
+            <p class="text-sm text-slate-600 mt-2">Un repère visuel simple = décision plus rapide.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-bold text-slate-900 text-sm">Zéro culpabilisation</p>
+            <p class="text-sm text-slate-600 mt-2">On guide, on n’interdit pas.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-bold text-slate-900 text-sm">Résultats stables</p>
+            <p class="text-sm text-slate-600 mt-2">Les gains tiennent dans le temps.</p>
+          </div>
+        </div>
+      </div>
 
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Check rapide</p>
-          <h3 class="text-lg font-extrabold text-slate-900 mb-3">Vous voulez chiffrer ?</h3>
-          <p class="text-sm text-slate-600 mb-4">
-            Recevez une estimation personnalisée selon votre foyer (gratuit, sans engagement).
+      <div class="rounded-3xl bg-white p-8 card">
+        <h2 class="text-2xl font-extrabold text-slate-900">2) Automatiser l’économie</h2>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Les outils “sans effort” sont ceux qui réduisent la consommation sans demander une discipline quotidienne.
+          Un rappel doux, au bon moment, suffit à corriger la dérive.
+        </p>
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <p class="text-sm font-bold text-slate-900">Règle simple</p>
+          <p class="text-sm text-slate-600 mt-2">
+            Si vous économisez <strong>2 minutes</strong> par douche, le gain devient massif sur 12 mois.
+            L’important : que ce soit <strong>automatique</strong> et <strong>sans friction</strong>.
           </p>
-          <a href="index.html#contact"
-             class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition">
-            Faire mon diagnostic
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
         </div>
+      </div>
 
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">À retenir</p>
-          <div class="space-y-3 text-sm text-slate-700">
-            <div class="flex items-start gap-2">
-              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
-              <p>Sans indicateur, on sous-estime toujours.</p>
+      <div class="rounded-3xl overflow-hidden border border-slate-200 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-emerald-500/20"></div>
+        <div class="relative z-10 p-8 lg:p-10">
+          <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+              <p class="text-sm font-semibold text-white/80 flex items-center gap-2">
+                <i data-lucide="leaf" class="w-4 h-4 text-emerald-300"></i>
+                Sans engagement
+              </p>
+              <h3 class="text-2xl font-extrabold mt-2">Vous voulez un plan personnalisé ?</h3>
+              <p class="text-white/80 mt-3 leading-relaxed">
+                Recevez un diagnostic gratuit (logement + foyer + habitudes) et une recommandation claire.
+              </p>
             </div>
-            <div class="flex items-start gap-2">
-              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
-              <p>La discipline est fragile, le système est constant.</p>
-            </div>
-            <div class="flex items-start gap-2">
-              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
-              <p>L’eau chaude est le vrai poste de coût.</p>
+
+            <div class="flex flex-col gap-3">
+              <a href="index.html#contact"
+                 class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-600 text-white font-extrabold hover:bg-emerald-700 transition shadow-2xl shadow-emerald-500/25">
+                Je demande mon diagnostic
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </a>
+
+              <a href="index.html"
+                 class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/10 border border-white/15 text-white font-semibold hover:bg-white/15 transition">
+                Retour au site
+                <i data-lucide="home" class="w-5 h-5"></i>
+              </a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-      </aside>
-
-    </div>
   </main>
 
-  <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white">
     <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-500">© 2026 Dimileau • Tous droits réservés</p>
+      <p class="text-sm text-slate-500">© 2026 Dimileau — Tous droits réservés.</p>
       <div class="flex items-center gap-3">
-        <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition">Accueil</a>
-        <span class="text-slate-300">•</span>
-        <a href="index.html#contact" class="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition">Diagnostic</a>
+        <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-400 hover:text-emerald-600 transition"
+           aria-label="Instagram Dimileau">
+          <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+        <a href="index.html#contact" class="text-sm font-bold text-emerald-700 hover:underline">
+          Diagnostic gratuit
+        </a>
       </div>
     </div>
   </footer>
 
   <script>
-    if (window.lucide) lucide.createIcons();
+    lucide.createIcons();
+
+    (function () {
+      const foyer = document.getElementById('foyer');
+      const goal = document.getElementById('goal');
+      const leverVisible = document.getElementById('leverVisible');
+      const leverAuto = document.getElementById('leverAuto');
+      const leverFlow = document.getElementById('leverFlow');
+      const leverHabits = document.getElementById('leverHabits');
+
+      const foyerVal = document.getElementById('foyerVal');
+      const goalVal = document.getElementById('goalVal');
+      const euroVal = document.getElementById('euroVal');
+      const effortVal = document.getElementById('effortVal');
+      const planList = document.getElementById('planList');
+
+      // Base (ordre de grandeur) pour foyer de 4 : ~200€/an
+      // On scale ensuite.
+      function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+
+      function buildPlan(states) {
+        const plan = [];
+        if (states.visible) plan.push("Rendre la consommation visible (repère immédiat).");
+        if (states.auto) plan.push("Ajouter un rappel automatique au bon moment (avant dérive).");
+        if (states.flow) plan.push("Optimiser le débit sans perdre en confort (diffusion/jet).");
+        if (states.habits) plan.push("Ajouter 1 micro-habitude simple (ex : rinçage plus court).");
+
+        // Si rien coché : default
+        if (plan.length === 0) {
+          plan.push("Commencez par un repère visuel simple : c’est le plus rentable.");
+          plan.push("Ensuite, ajoutez un rappel automatique pour stabiliser l’économie.");
+        }
+
+        // Priorité : visibilité + auto
+        if (states.visible && states.auto) {
+          plan.unshift("Combo gagnant : visibilité + automatisation (impact fort, effort faible).");
+        }
+        return plan.slice(0, 4);
+      }
+
+      function compute() {
+        const p = Number(foyer.value);
+        const g = Number(goal.value);
+
+        const states = {
+          visible: leverVisible.checked,
+          auto: leverAuto.checked,
+          flow: leverFlow.checked,
+          habits: leverHabits.checked
+        };
+
+        foyerVal.textContent = p;
+        goalVal.textContent = g;
+
+        // Score "sans effort" : visibilité + auto pèsent plus
+        let score = 0;
+        if (states.visible) score += 35;
+        if (states.auto) score += 35;
+        if (states.flow) score += 20;
+        if (states.habits) score += 10;
+
+        // Effort label
+        const effort =
+          score >= 70 ? "Faible" :
+          score >= 40 ? "Moyen" : "Élevé";
+
+        effortVal.textContent = effort;
+
+        // Euro estimate: base 200€ for 4 people at ~25% goal.
+        // Adjust by people and goal, and by lever score (if low score, hard to reach goal).
+        const baseFor4 = 200; // ordre de grandeur
+        const peopleFactor = p / 4;
+        const goalFactor = g / 25;
+        const achievability = clamp(score / 70, 0.55, 1.15); // low score => less achievable
+
+        const euros = Math.round(baseFor4 * peopleFactor * goalFactor * achievability);
+        euroVal.textContent = euros.toString();
+
+        // Plan list
+        const plan = buildPlan(states);
+        planList.innerHTML = plan.map(item => `<li>${item}</li>`).join('');
+      }
+
+      [foyer, goal, leverVisible, leverAuto, leverFlow, leverHabits].forEach(el => {
+        el.addEventListener('input', compute);
+        el.addEventListener('change', compute);
+      });
+
+      compute();
+    })();
   </script>
 
 </body>
