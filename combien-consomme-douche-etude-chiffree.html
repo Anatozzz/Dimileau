@@ -10,14 +10,26 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    .hero-grad {
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(249,115,22,.18), transparent 60%),
-                  radial-gradient(900px 500px at 90% 30%, rgba(14,165,233,.18), transparent 55%),
-                  linear-gradient(135deg, #FFF7ED 0%, #E0F2FE 45%, #ECFDF5 100%);
+    .hero-grad{
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(249,115,22,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 30%, rgba(14,165,233,.18), transparent 55%),
+        linear-gradient(135deg, #FFF7ED 0%, #E0F2FE 45%, #ECFDF5 100%);
     }
-    .glass {
-      background: rgba(255, 255, 255, 0.78);
+    .glass{
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(10px);
+    }
+    .gradient-text{
+      background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .card{
+      border: 1px solid rgba(148,163,184,.35);
+      box-shadow: 0 18px 40px rgba(15,23,42,.08);
     }
   </style>
 </head>
@@ -38,13 +50,10 @@
       </a>
 
       <div class="flex items-center gap-3">
-        <a href="https://www.instagram.com/dimil_eau/"
-           target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-500 transition"
+        <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-400 hover:text-emerald-600 transition"
            aria-label="Instagram Dimileau">
-          <img src="https://i.postimg.cc/gJB95pTd/Capture-d-ecran-2026-03-02-a-14-38-14.png"
-               alt="Instagram"
-               class="w-5 h-5" />
+          <i data-lucide="instagram" class="w-5 h-5"></i>
         </a>
 
         <a href="index.html#contact"
@@ -57,247 +66,399 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-grad border-b border-slate-200/60">
-    <div class="max-w-5xl mx-auto px-6 pt-14 pb-12">
-      <a href="index.html#blog" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-emerald-700 transition w-fit">
-        <i data-lucide="chevron-left" class="w-4 h-4"></i>
-        Retour au blog
-      </a>
+  <section class="hero-grad">
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-10">
+      <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-10 items-start">
 
-      <div class="mt-6 flex flex-wrap items-center gap-3">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-orange-500/20 text-orange-700 text-sm font-semibold">
-          <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-          Étude chiffrée
-        </span>
-        <span class="text-sm text-slate-600">Lecture : 6 min</span>
-        <span class="text-sm text-slate-600">•</span>
-        <span class="text-sm text-slate-600">Base : débit + durée</span>
-      </div>
+        <div>
+          <a href="index.html#blog"
+             class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Retour au blog
+          </a>
 
-      <h1 class="mt-5 text-3xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-        Combien consomme réellement une douche ?<br class="hidden sm:block" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-emerald-600">
-          L’étude chiffrée 2026
-        </span>
-      </h1>
+          <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700 text-sm font-semibold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+            Étude chiffrée • 2026
+          </div>
 
-      <p class="mt-5 text-lg text-slate-700 max-w-3xl leading-relaxed">
-        Le point aveugle n’est pas l’eau “froide” : c’est l’eau <strong>chaude</strong>.
-        Plus la douche dure, plus vous payez deux fois : <strong>eau + énergie</strong>.
-      </p>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-5 leading-tight">
+            Combien consomme réellement une douche ?<br>
+            <span class="gradient-text">Les chiffres (vraiment) utiles</span>
+          </h1>
 
-      <!-- Key stats -->
-      <div class="grid sm:grid-cols-3 gap-4 mt-8">
-        <div class="bg-white/85 border border-slate-200 rounded-2xl p-5">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Débit moyen</p>
-          <p class="mt-2 text-2xl font-extrabold text-slate-900">12–15 L/min</p>
-          <p class="text-sm text-slate-600 mt-1">Selon installation + pression.</p>
+          <p class="text-lg text-slate-600 mt-5 leading-relaxed max-w-2xl">
+            La plupart des foyers sous-estiment la douche. Entre <strong>durée</strong> et <strong>débit</strong>,
+            l’écart peut être énorme. Ici : des estimations simples + un simulateur pour votre cas.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-6 text-sm">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700">
+              <i data-lucide="timer" class="w-4 h-4 text-orange-500"></i>
+              Durée moyenne : 8 min
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700">
+              <i data-lucide="droplets" class="w-4 h-4 text-sky-600"></i>
+              Débit courant : 12–15 L/min
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700">
+              <i data-lucide="wallet" class="w-4 h-4 text-emerald-600"></i>
+              Impact : eau + eau chaude
+            </span>
+          </div>
         </div>
-        <div class="bg-white/85 border border-slate-200 rounded-2xl p-5">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Durée moyenne</p>
-          <p class="mt-2 text-2xl font-extrabold text-slate-900">≈ 8 min</p>
-          <p class="text-sm text-slate-600 mt-1">Souvent sous-estimée.</p>
+
+        <!-- Mini recap card -->
+        <div class="rounded-3xl bg-white/80 border border-slate-200 p-7 shadow-xl">
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Repères rapides</p>
+
+          <div class="mt-4 space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">Douche “classique” (8 min • 12 L/min)</p>
+              <p class="text-2xl font-extrabold text-slate-900 mt-1">≈ 96 L</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-4">
+              <p class="text-xs text-slate-500">Famille de 4 (1 douche/jour)</p>
+              <p class="text-2xl font-extrabold text-slate-900 mt-1">≈ 140 m³ / an</p>
+            </div>
+
+            <a href="#simulateur"
+               class="inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition">
+              Lancer le simulateur
+              <i data-lucide="calculator" class="w-5 h-5"></i>
+            </a>
+
+            <p class="text-xs text-slate-500 text-center">
+              Estimations indicatives (selon installation/pression).
+            </p>
+          </div>
         </div>
-        <div class="bg-white/85 border border-slate-200 rounded-2xl p-5">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Conso typique</p>
-          <p class="mt-2 text-2xl font-extrabold text-slate-900">96–120 L</p>
-          <p class="text-sm text-slate-600 mt-1">Par douche “standard”.</p>
-        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Content -->
   <main class="max-w-5xl mx-auto px-6 py-14">
-    <div class="grid lg:grid-cols-[1fr_320px] gap-10">
 
-      <!-- Article -->
-      <article class="max-w-none">
-        <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
-
-          <h2 class="text-2xl font-extrabold text-slate-900 mb-3">Méthode de calcul (simple et fiable)</h2>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            La consommation d’une douche dépend de deux facteurs : <strong>débit</strong> (L/min) × <strong>durée</strong> (min).
-            <br />
-            <span class="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-sm text-slate-700">
-              <i data-lucide="calculator" class="w-4 h-4 text-emerald-600"></i>
-              <strong>Formule :</strong> Litres = (L/min) × (minutes)
-            </span>
-          </p>
-
-          <!-- Table -->
-          <div class="rounded-2xl border border-slate-200 overflow-hidden mb-8">
-            <div class="bg-slate-50 px-6 py-4 flex items-center justify-between">
-              <p class="font-bold text-slate-900">Estimations par durée (débit moyen)</p>
-              <span class="text-xs font-semibold text-slate-500">12–15 L/min</span>
-            </div>
-            <div class="p-6 overflow-x-auto">
-              <table class="w-full text-sm">
-                <thead>
-                  <tr class="text-left text-slate-500">
-                    <th class="py-2 pr-4">Durée</th>
-                    <th class="py-2 pr-4">À 12 L/min</th>
-                    <th class="py-2 pr-4">À 15 L/min</th>
-                    <th class="py-2">Lecture</th>
-                  </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                  <tr class="border-t">
-                    <td class="py-3 pr-4 font-semibold">5 min</td>
-                    <td class="py-3 pr-4">60 L</td>
-                    <td class="py-3 pr-4">75 L</td>
-                    <td class="py-3">“Bonne zone”</td>
-                  </tr>
-                  <tr class="border-t">
-                    <td class="py-3 pr-4 font-semibold">8 min</td>
-                    <td class="py-3 pr-4">96 L</td>
-                    <td class="py-3 pr-4">120 L</td>
-                    <td class="py-3">Moyenne constatée</td>
-                  </tr>
-                  <tr class="border-t">
-                    <td class="py-3 pr-4 font-semibold">10 min</td>
-                    <td class="py-3 pr-4">120 L</td>
-                    <td class="py-3 pr-4">150 L</td>
-                    <td class="py-3">Dérive fréquente</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+    <!-- Key metrics -->
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-3xl bg-white p-7 card">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-2xl bg-sky-100 flex items-center justify-center">
+            <i data-lucide="droplet" class="w-6 h-6 text-sky-600"></i>
           </div>
-
-          <h2 class="text-2xl font-extrabold text-slate-900 mb-3">Cas concret : une famille de 4</h2>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            Prenons une base simple : <strong>4 douches / jour</strong>, <strong>8 minutes</strong> chacune.
-            <br />
-            Cela fait <strong>≈ 384 à 480 litres par jour</strong>, soit <strong>≈ 140 000 à 175 000 litres par an</strong> uniquement pour les douches.
-          </p>
-
-          <!-- Highlight block -->
-          <div class="rounded-3xl bg-slate-900 text-white p-7 mb-8 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-emerald-500/20"></div>
-            <div class="relative z-10">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center">
-                  <i data-lucide="alert-triangle" class="w-5 h-5 text-orange-400"></i>
-                </div>
-                <div>
-                  <p class="font-extrabold text-xl">Le piège : l’eau chaude</p>
-                  <p class="text-white/80 mt-2 leading-relaxed">
-                    La facture n’est pas seulement “des litres”. Chauffer l’eau coûte cher.
-                    Réduire la durée de 1–2 minutes par douche a un impact réel sur le budget annuel.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h2 class="text-2xl font-extrabold text-slate-900 mb-3">3 leviers simples (sans perdre en confort)</h2>
-          <div class="grid sm:grid-cols-3 gap-4 mb-8">
-            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="eye" class="w-5 h-5 text-emerald-600"></i>
-                <p class="font-bold text-slate-900">Visible</p>
-              </div>
-              <p class="text-sm text-slate-600">Un repère en temps réel change naturellement la durée.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="timer" class="w-5 h-5 text-orange-500"></i>
-                <p class="font-bold text-slate-900">Guidé</p>
-              </div>
-              <p class="text-sm text-slate-600">Un signal “orange/rouge” aide à couper au bon moment.</p>
-            </div>
-            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
-              <div class="flex items-center gap-2 mb-2">
-                <i data-lucide="trending-down" class="w-5 h-5 text-sky-600"></i>
-                <p class="font-bold text-slate-900">Stable</p>
-              </div>
-              <p class="text-sm text-slate-600">Les économies durent car elles ne dépendent pas de la motivation.</p>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="rounded-3xl bg-white border border-slate-200 p-8 text-center">
-            <h3 class="text-2xl font-extrabold text-slate-900 mb-3">
-              Vous voulez une estimation personnalisée ?
-            </h3>
-            <p class="text-slate-600 mb-6 max-w-xl mx-auto">
-              Type de logement, taille du foyer, habitudes : on vous donne une projection simple + un plan d’économies.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="index.html#contact"
-                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/25">
-                Recevoir mon diagnostic gratuit
-                <i data-lucide="sparkles" class="w-5 h-5"></i>
-              </a>
-
-              <a href="https://www.instagram.com/dimil_eau/"
-                 target="_blank" rel="noopener"
-                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
-                Question rapide en DM
-                <i data-lucide="instagram" class="w-5 h-5"></i>
-              </a>
-            </div>
-          </div>
-
+          <span class="text-xs font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full">Débit</span>
         </div>
-      </article>
+        <p class="text-3xl font-extrabold text-slate-900 mt-5">12–15</p>
+        <p class="text-sm text-slate-600 mt-1">litres / minute (courant)</p>
+        <p class="text-sm text-slate-500 mt-4 leading-relaxed">
+          Le débit varie selon le pommeau et la pression. C’est souvent le facteur “caché”.
+        </p>
+      </div>
 
-      <!-- Sidebar -->
-      <aside class="space-y-6">
+      <div class="rounded-3xl bg-white p-7 card">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center">
+            <i data-lucide="timer" class="w-6 h-6 text-orange-600"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full">Durée</span>
+        </div>
+        <p class="text-3xl font-extrabold text-slate-900 mt-5">8</p>
+        <p class="text-sm text-slate-600 mt-1">minutes (moyenne)</p>
+        <p class="text-sm text-slate-500 mt-4 leading-relaxed">
+          +2 minutes par douche = +25% de volume (à débit constant). L’effet est direct.
+        </p>
+      </div>
 
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Mini-calcul</p>
-          <h3 class="text-lg font-extrabold text-slate-900 mb-3">Votre douche, c’est combien ?</h3>
-          <p class="text-sm text-slate-600 mb-4">
-            Prenez votre durée moyenne (min) × votre débit estimé (12–15 L/min).
-            Ensuite, multipliez par le nombre de douches / jour.
-          </p>
-          <a href="index.html#calcul"
-             class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition">
-            Ouvrir le simulateur
-            <i data-lucide="calculator" class="w-4 h-4"></i>
+      <div class="rounded-3xl bg-white p-7 card">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center">
+            <i data-lucide="trending-down" class="w-6 h-6 text-emerald-700"></i>
+          </div>
+          <span class="text-xs font-semibold text-slate-500 bg-slate-50 border border-slate-200 px-3 py-1 rounded-full">Levier</span>
+        </div>
+        <p class="text-3xl font-extrabold text-slate-900 mt-5">-20% à -30%</p>
+        <p class="text-sm text-slate-600 mt-1">sans perdre en confort</p>
+        <p class="text-sm text-slate-500 mt-4 leading-relaxed">
+          Le plus efficace : rendre la conso visible, et guider sans “forcer”.
+        </p>
+      </div>
+    </section>
+
+    <!-- Explanation -->
+    <section class="mt-14">
+      <div class="rounded-3xl bg-white p-8 card">
+        <h2 class="text-2xl font-extrabold text-slate-900">La formule (simple)</h2>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          <strong>Litres par douche</strong> = <strong>Durée (min)</strong> × <strong>Débit (L/min)</strong><br>
+          Exemple : 8 min × 12 L/min = <strong>96 litres</strong>.
+        </p>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm font-bold text-slate-900">Repères par durée (débit 12 L/min)</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex items-center justify-between"><span>5 min</span><strong>60 L</strong></li>
+              <li class="flex items-center justify-between"><span>8 min</span><strong>96 L</strong></li>
+              <li class="flex items-center justify-between"><span>10 min</span><strong>120 L</strong></li>
+              <li class="flex items-center justify-between"><span>12 min</span><strong>144 L</strong></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm font-bold text-slate-900">Repères par débit (durée 8 min)</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex items-center justify-between"><span>8 L/min</span><strong>64 L</strong></li>
+              <li class="flex items-center justify-between"><span>12 L/min</span><strong>96 L</strong></li>
+              <li class="flex items-center justify-between"><span>15 L/min</span><strong>120 L</strong></li>
+              <li class="flex items-center justify-between"><span>18 L/min</span><strong>144 L</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive simulator -->
+    <section id="simulateur" class="mt-14">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex items-start justify-between gap-6 flex-wrap">
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Interactif</p>
+            <h2 class="text-2xl font-extrabold text-slate-900 mt-2">Simulez votre consommation en 10 secondes</h2>
+            <p class="text-slate-600 mt-2 max-w-2xl">
+              Ajustez les curseurs : vous voyez instantanément l’impact en litres et en m³/an.
+            </p>
+          </div>
+
+          <a href="index.html#contact"
+             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-500/25">
+            Diagnostic gratuit
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
           </a>
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
-          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">À retenir</p>
-          <div class="space-y-3 text-sm text-slate-700">
-            <div class="flex items-start gap-2">
-              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
-              <p>8 min à 12–15 L/min = 96–120 L.</p>
+        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+          <!-- Controls -->
+          <div class="space-y-6">
+
+            <!-- Durée -->
+            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+              <div class="flex items-center justify-between mb-3">
+                <p class="font-bold text-slate-900">Durée de douche</p>
+                <span class="text-sm font-semibold text-slate-700">
+                  <span id="durVal">8</span> min
+                </span>
+              </div>
+              <input id="dur" type="range" min="3" max="20" value="8" step="1" class="w-full accent-emerald-600">
+              <div class="flex justify-between text-xs text-slate-500 mt-2">
+                <span>3 min</span><span>20 min</span>
+              </div>
             </div>
-            <div class="flex items-start gap-2">
-              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
-              <p>Pour un foyer, l’eau chaude est le poste “caché”.</p>
+
+            <!-- Débit -->
+            <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+              <div class="flex items-center justify-between mb-3">
+                <p class="font-bold text-slate-900">Débit estimé</p>
+                <span class="text-sm font-semibold text-slate-700">
+                  <span id="flowVal">12</span> L/min
+                </span>
+              </div>
+              <input id="flow" type="range" min="6" max="18" value="12" step="1" class="w-full accent-sky-600">
+              <div class="flex justify-between text-xs text-slate-500 mt-2">
+                <span>6</span><span>18</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-3">
+                Astuce : la plupart des douches sont autour de <strong>12–15 L/min</strong>.
+              </p>
             </div>
-            <div class="flex items-start gap-2">
-              <i data-lucide="dot" class="w-4 h-4 text-emerald-600 mt-1"></i>
-              <p>Rendre visible = réduire sans effort.</p>
+
+            <!-- Foyer + douches/jour -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+                <div class="flex items-center justify-between mb-3">
+                  <p class="font-bold text-slate-900">Personnes</p>
+                  <span class="text-sm font-semibold text-slate-700"><span id="peopleVal">4</span></span>
+                </div>
+                <input id="people" type="range" min="1" max="6" value="4" step="1" class="w-full accent-orange-500">
+                <div class="flex justify-between text-xs text-slate-500 mt-2">
+                  <span>1</span><span>6</span>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 p-5 bg-slate-50">
+                <div class="flex items-center justify-between mb-3">
+                  <p class="font-bold text-slate-900">Douches / jour</p>
+                  <span class="text-sm font-semibold text-slate-700"><span id="showersVal">1</span></span>
+                </div>
+                <input id="showers" type="range" min="1" max="2" value="1" step="1" class="w-full accent-emerald-600">
+                <div class="flex justify-between text-xs text-slate-500 mt-2">
+                  <span>1</span><span>2</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Results -->
+          <div class="rounded-3xl border border-slate-200 bg-slate-900 text-white p-7 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-emerald-500/20"></div>
+
+            <div class="relative z-10">
+              <div class="flex items-center gap-2 text-white/80 text-sm font-semibold">
+                <i data-lucide="sparkles" class="w-4 h-4 text-emerald-300"></i>
+                Résultats estimés
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 mt-5">
+                <div class="rounded-2xl bg-white/10 border border-white/15 p-4">
+                  <p class="text-xs text-white/70">Par douche</p>
+                  <p class="text-3xl font-extrabold mt-1"><span id="litersShower">96</span> L</p>
+                </div>
+
+                <div class="rounded-2xl bg-white/10 border border-white/15 p-4">
+                  <p class="text-xs text-white/70">Par jour</p>
+                  <p class="text-3xl font-extrabold mt-1"><span id="litersDay">384</span> L</p>
+                </div>
+
+                <div class="rounded-2xl bg-white/10 border border-white/15 p-4">
+                  <p class="text-xs text-white/70">Par an</p>
+                  <p class="text-3xl font-extrabold mt-1"><span id="m3Year">140</span> m³</p>
+                </div>
+
+                <div class="rounded-2xl bg-white/10 border border-white/15 p-4">
+                  <p class="text-xs text-white/70">Levier simple</p>
+                  <p class="text-sm text-white/80 mt-1 leading-relaxed">
+                    Réduire <strong>2 minutes</strong> = baisse directe des litres + du coût de l’eau chaude.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                <a href="index.html#contact"
+                   class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white font-extrabold hover:bg-emerald-700 transition">
+                  Recevoir mon diagnostic
+                  <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+
+                <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+                   class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/15 text-white font-semibold hover:bg-white/15 transition">
+                  Question en DM
+                  <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+              </div>
+
+              <p class="text-xs text-white/60 mt-4">
+                * Estimation indicative : la pression et l’installation peuvent modifier le débit.
+              </p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-      </aside>
+    <!-- Action block -->
+    <section class="mt-14">
+      <div class="rounded-3xl overflow-hidden border border-slate-200 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-emerald-500/20"></div>
+        <div class="relative z-10 p-8 lg:p-10">
+          <div class="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+              <p class="text-sm font-semibold text-white/80 flex items-center gap-2">
+                <i data-lucide="leaf" class="w-4 h-4 text-emerald-300"></i>
+                Objectif : confort + économies
+              </p>
+              <h3 class="text-2xl font-extrabold mt-2">Passez du “je pense” au “je sais”.</h3>
+              <p class="text-white/80 mt-3 leading-relaxed">
+                Recevez un diagnostic rapide (gratuit) et des recommandations adaptées à votre foyer.
+              </p>
+            </div>
 
-    </div>
+            <div class="flex flex-col gap-3">
+              <a href="index.html#contact"
+                 class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-600 text-white font-extrabold hover:bg-emerald-700 transition shadow-2xl shadow-emerald-500/25">
+                Je demande mon diagnostic
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </a>
+
+              <a href="index.html"
+                 class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white/10 border border-white/15 text-white font-semibold hover:bg-white/15 transition">
+                Retour au site
+                <i data-lucide="home" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white">
     <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-500">© 2026 Dimileau • Tous droits réservés</p>
+      <p class="text-sm text-slate-500">© 2026 Dimileau — Tous droits réservés.</p>
       <div class="flex items-center gap-3">
-        <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition">Accueil</a>
-        <span class="text-slate-300">•</span>
-        <a href="index.html#contact" class="text-sm font-semibold text-slate-600 hover:text-emerald-700 transition">Diagnostic</a>
+        <a href="https://www.instagram.com/dimil_eau/" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white hover:border-emerald-400 hover:text-emerald-600 transition"
+           aria-label="Instagram Dimileau">
+          <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+        <a href="index.html#contact"
+           class="text-sm font-bold text-emerald-700 hover:underline">
+          Diagnostic gratuit
+        </a>
       </div>
     </div>
   </footer>
 
   <script>
-    if (window.lucide) lucide.createIcons();
+    // Lucide icons
+    lucide.createIcons();
+
+    // Simulator logic
+    (function () {
+      const dur = document.getElementById('dur');
+      const flow = document.getElementById('flow');
+      const people = document.getElementById('people');
+      const showers = document.getElementById('showers');
+
+      const durVal = document.getElementById('durVal');
+      const flowVal = document.getElementById('flowVal');
+      const peopleVal = document.getElementById('peopleVal');
+      const showersVal = document.getElementById('showersVal');
+
+      const litersShower = document.getElementById('litersShower');
+      const litersDay = document.getElementById('litersDay');
+      const m3Year = document.getElementById('m3Year');
+
+      function round(n) { return Math.round(n); }
+
+      function update() {
+        const d = Number(dur.value);
+        const f = Number(flow.value);
+        const p = Number(people.value);
+        const s = Number(showers.value);
+
+        durVal.textContent = d;
+        flowVal.textContent = f;
+        peopleVal.textContent = p;
+        showersVal.textContent = s;
+
+        const Lshower = d * f;
+        const Lday = Lshower * p * s;
+        const m3 = (Lday * 365) / 1000;
+
+        litersShower.textContent = round(Lshower);
+        litersDay.textContent = round(Lday);
+        m3Year.textContent = round(m3);
+      }
+
+      [dur, flow, people, showers].forEach(el => el.addEventListener('input', update));
+      update();
+    })();
   </script>
+
 </body>
 </html>
